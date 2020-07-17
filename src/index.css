@@ -13,10 +13,10 @@ code {
     monospace;
 }
 
-.messages {
+/* .messages {
   margin: 0;
   padding: 0;
-}
+} */
 
 .message {
   display: inline-block;

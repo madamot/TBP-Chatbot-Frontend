@@ -1,14 +1,18 @@
 import React from 'react';
 
+
 import "../../index.css"
 
-export default function Text({ message: { id, title, state, author, date, user }, onArchiveTask, onPinTask }) {
+
+
+export default function Text({ message: { id, title, platform, author, date, user }, onArchiveTask, onPinTask }) {
   return (
-    <div className="messages">
-      <div className={`message ${state} ${author}`}>
+    <div>
+
+      <div className={`message ${platform} ${author}`}>
         <div className="content">
           {
-            (state === 'teams')
+            (platform === 'teams')
               ? <div className="top-row">
                 <div className="time">
                   {date}

@@ -13,7 +13,7 @@ export default {
 export const messageData = {
   id: '1',
   title: 'Hello world',
-  state: 'messenger',
+  platform: 'messenger',
   author: 'bot',
   date: '14-07-20',
   user: 'testUser',
@@ -28,13 +28,13 @@ export const actionsData = {
 export const Messenger_Bot = () => <Text message={{ ...messageData }} {...actionsData} />;
 
 export const Messenger_User = () => (
-  <Text message={{ ...messageData, state: 'messenger', author: 'user'}} {...actionsData} />
+  <Text message={{ ...messageData, platform: 'messenger', author: 'user'}} {...actionsData} />
 );
 
 export const Teams_Bot = () => (
-  <Text message={{ ...messageData, state: 'teams' }} {...actionsData} />
+  <Text message={{ ...messageData, platform: 'teams' }} {...actionsData} />
 );
 
 export const Teams_User = () => (
-  <Text message={{ ...messageData, state: 'teams', author: 'user' }} {...actionsData} />
+  <Text message={{ ...messageData, platform: 'teams', author: 'user' }} {...actionsData} />
 );
