@@ -15,7 +15,7 @@ export default function Text({ message: { id, title, platform, author, date, use
             (platform === 'teams')
               ? <div className="top-row">
                 <div className="time">
-                  {date}
+                  {author} {date}
                 </div>
               </div>
               : null

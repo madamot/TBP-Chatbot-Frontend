@@ -14,7 +14,10 @@ export const messageData = {
   id: '1',
   title: 'Hello world',
   platform: 'messenger',
-  author: 'bot',
+  author: {
+    BOT: 'bot',
+    USER: 'user',
+  },
   date: '14-07-20',
   user: 'testUser',
   updatedAt: new Date(2018, 0, 1, 9, 0),
@@ -25,16 +28,16 @@ export const actionsData = {
   onArchiveTask: action('onArchiveTask'),
 };
 
-export const Messenger_Bot = () => <Text message={{ ...messageData }} {...actionsData} />;
+export const Messenger_Bot = () => <Text message={{ ...messageData, author: messageData.author.BOT }} {...actionsData} />;
 
 export const Messenger_User = () => (
-  <Text message={{ ...messageData, platform: 'messenger', author: 'user'}} {...actionsData} />
+  <Text message={{ ...messageData, platform: 'messenger', author: messageData.author.USER }} {...actionsData} />
 );
 
 export const Teams_Bot = () => (
-  <Text message={{ ...messageData, platform: 'teams' }} {...actionsData} />
+  <Text message={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} {...actionsData} />
 );
 
 export const Teams_User = () => (
-  <Text message={{ ...messageData, platform: 'teams', author: 'user' }} {...actionsData} />
+  <Text message={{ ...messageData, platform: 'teams', author: messageData.author.USER }} {...actionsData} />
 );
