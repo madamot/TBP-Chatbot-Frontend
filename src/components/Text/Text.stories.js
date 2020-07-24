@@ -19,7 +19,6 @@ export const messageData = {
     USER: 'user',
   },
   date: '14-07-20',
-  user: 'testUser',
   updatedAt: new Date(2018, 0, 1, 9, 0),
 };
 
@@ -34,9 +33,7 @@ export const Messenger_User = () => (
   <Text message={{ ...messageData, platform: 'messenger', author: messageData.author.USER }} {...actionsData} />
 );
 
-export const Teams_Bot = () => (
-  <Text message={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} {...actionsData} />
-);
+export const Teams_Bot = () => <Text message={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} {...actionsData} />;
 
 export const Teams_User = () => (
   <Text message={{ ...messageData, platform: 'teams', author: messageData.author.USER }} {...actionsData} />
