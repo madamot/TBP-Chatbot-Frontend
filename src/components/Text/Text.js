@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import "../../index.css"
 
 const Message = styled.div`
-  display: inline-block;
+  display: flex;
   clear: both;
   margin-bottom: 2px;
   font-family: Helvetica, Arial, sans-serif;
@@ -47,11 +47,11 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
-export default function Text({ message: { id, title, platform, author, date, user }, onArchiveTask, onPinTask }) {
+export default function Text({ className, message: { id, title, platform, author, date, user }, onArchiveTask, onPinTask }) {
   return (
-    <div>
+    <>
       <Message author={author}>
-        <MainMessage platform={platform} author={author}>
+        <MainMessage className={className} platform={platform} author={author}>
           <Meta platform={platform}>
             {author} {date}
           </Meta>
@@ -59,6 +59,6 @@ export default function Text({ message: { id, title, platform, author, date, use
         </MainMessage>
 
       </Message>
-    </div>
+    </>
   );
 }

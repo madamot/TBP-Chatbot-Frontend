@@ -12,15 +12,13 @@ export default {
   excludeStories: /.*Data$/,
 };
 
-// export const buttonData = {
-//
-// };
+export const buttonData = {
+  title: 'my button',
+};
 
 // export const actionsData = {
 //   onPinTask: action('onPinTask'),
 //   onArchiveTask: action('onArchiveTask'),
 // };
 
-export const Messenger_Button = () => <Button message={{ ...messageData}} />;
-
-// export const Teams_Button = () => <Button />;
+export const Messenger_Button = () => <Button onClick={action('clicked')} button={{ ...buttonData }} message={{ ...messageData}} />;
