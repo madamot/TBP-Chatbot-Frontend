@@ -12,7 +12,7 @@ export default {
 
 export const messageData = {
   id: '1',
-  title: 'Hello world',
+  title: 'Hello World',
   platform: 'messenger',
   author: {
     BOT: 'bot',
