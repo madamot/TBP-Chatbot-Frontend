@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 
 import Button from './Button';
 
-import { messageData } from '../Text/Text.stories';
+import { messageData, Messenger_Bot, Teams_Bot } from '../Text/Text.stories';
 
 export default {
   component: Button,
@@ -13,12 +13,18 @@ export default {
 };
 
 export const buttonData = {
-  title: 'my button',
+  title: 'my button'
 };
 
-// export const actionsData = {
-//   onPinTask: action('onPinTask'),
-//   onArchiveTask: action('onArchiveTask'),
-// };
 
-export const Messenger_Button = () => <Button onClick={action('clicked')} button={{ ...buttonData }} message={{ ...messageData}} />;
+export const Messenger_Button = () => (
+  <>
+    <Button onClick={action('clicked')} button={{ ...buttonData}} message={{...messageData}} />
+  </>
+);
+
+export const Teams_Button = () => (
+  <>
+    <Button onClick={action('clicked')} button={{ ...buttonData}} message={{...messageData, platform: 'teams'}}/>
+  </>
+);

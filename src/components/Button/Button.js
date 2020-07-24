@@ -1,11 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { action } from '@storybook/addon-actions';
 
 import Text from '../Text/Text';
-
-const Wrapper = styled.div`
-  display: inline-block;
-`;
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -30,16 +27,22 @@ const ButtonInner = styled.div`
   background: #fff;
 `;
 
-const TextButton = styled(Text)`
-  border-bottom-left-radius: 5px;
+const Wrapper = styled.div`
+  display: inline-block;
+  clear: both;
+  margin-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  float: ${({ author }) => author === 'user' ? "right" : "left"};
+
 `;
 
 
 export default function Button({ message, button: { title } }) {
+
   return (
     <Wrapper>
-      <TextButton message={{...message, platform: 'messenger', author: message.author.BOT }} />
-      <ButtonContainer>
+      <Text message={{...message, author: message.author.BOT }} />
+      <ButtonContainer onClick={action('clicked')}>
         <ButtonInner>{title}</ButtonInner>
       </ButtonContainer>
     </Wrapper>

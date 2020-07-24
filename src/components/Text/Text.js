@@ -47,9 +47,8 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
-export default function Text({ className, message: { id, title, platform, author, date, user }, onArchiveTask, onPinTask }) {
+export default function Text({ className, message: { id, title, platform, author, date, user }}) {
   return (
-    <>
       <Message author={author}>
         <MainMessage className={className} platform={platform} author={author}>
           <Meta platform={platform}>
@@ -59,6 +58,5 @@ export default function Text({ className, message: { id, title, platform, author
         </MainMessage>
 
       </Message>
-    </>
   );
 }
