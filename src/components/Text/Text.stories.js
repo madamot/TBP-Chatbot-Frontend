@@ -27,13 +27,21 @@ export const actionsData = {
   onArchiveTask: action('onArchiveTask'),
 };
 
-export const Messenger_Bot = () => <Text message={{ ...messageData, author: messageData.author.BOT }} {...actionsData} />;
+export const Messenger_Bot = () => (
+  <>
+    <Text message={{ ...messageData, author: messageData.author.BOT }} {...actionsData} />
+  </>
+);
 
 export const Messenger_User = () => (
   <Text message={{ ...messageData, platform: 'messenger', author: messageData.author.USER }} {...actionsData} />
 );
 
-export const Teams_Bot = () => <Text message={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} {...actionsData} />;
+export const Teams_Bot = () => (
+  <>
+    <Text message={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} {...actionsData} />
+  </>
+);
 
 export const Teams_User = () => (
   <Text message={{ ...messageData, platform: 'teams', author: messageData.author.USER }} {...actionsData} />

@@ -9,6 +9,20 @@ const ButtonContainer = styled.div`
   clear: both;
   margin-bottom: 2px;
   font-family: Helvetica, Arial, sans-serif;
+
+  ${({ platform }) =>
+    platform === 'teams' &&
+    css`
+      padding-left: 1.6rem;
+      transform: translateY(-35%);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+      background-color: #F3F2F1;
+      color: #252423;
+      margin-bottom: 0;
+      min-width: 10.6rem;
+    `}
 `;
 
 const ButtonInner = styled.div`
@@ -25,6 +39,18 @@ const ButtonInner = styled.div`
   color: #0084ff;
   font-weight: bold;
   background: #fff;
+
+  ${({ platform }) =>
+    platform === 'teams' &&
+    css`
+      flex-grow: 0;
+      font-weight: normal;
+      border-radius: 3px;
+      border: 1px solid magenta;
+      background-color: #F3F2F1;
+      color: magenta;
+      margin-bottom: .6rem;
+    `}
 `;
 
 const Wrapper = styled.div`
@@ -33,7 +59,10 @@ const Wrapper = styled.div`
   margin-bottom: 2px;
   font-family: Helvetica, Arial, sans-serif;
   float: ${({ author }) => author === 'user' ? "right" : "left"};
+`;
 
+const TextButton = styled(Text)`
+  border-bottom-left-radius: 5px;
 `;
 
 
@@ -41,9 +70,9 @@ export default function Button({ message, button: { title } }) {
 
   return (
     <Wrapper>
-      <Text message={{...message, author: message.author.BOT }} />
-      <ButtonContainer onClick={action('clicked')}>
-        <ButtonInner>{title}</ButtonInner>
+      <TextButton message={{...message, author: message.author.BOT }} />
+      <ButtonContainer platform={message.platform} onClick={action('clicked')}>
+        <ButtonInner platform={message.platform}>{title}</ButtonInner>
       </ButtonContainer>
     </Wrapper>
   );
