@@ -17,14 +17,16 @@ export const buttonData = {
 };
 
 
-export const Messenger_Button = () => (
+export const Messenger_Button = ({platform}) => (
   <>
-    <Button onClick={action('clicked')} button={{ ...buttonData}} message={{...messageData}} />
+    <Button onClick={action('clicked')} button={{ ...buttonData}} platform={platform} />
+    {/* <Button onClick={action('clicked')} button={{ ...buttonData}} />
+    */}
   </>
 );
 
 export const Teams_Button = () => (
   <>
-    <Button onClick={action('clicked')} button={{ ...buttonData}} message={{...messageData, platform: 'teams'}}/>
+    <Button onClick={action('clicked')} button={{ ...buttonData}} platform='teams' />
   </>
 );

@@ -13,12 +13,12 @@ const ButtonContainer = styled.div`
   ${({ platform }) =>
     platform === 'teams' &&
     css`
-      padding-left: 1.6rem;
-      transform: translateY(-35%);
+      ${'' /* padding-left: 1.6rem; */}
+      ${'' /* transform: translateY(-35%); */}
       border-radius: 3px;
       overflow: hidden;
       position: relative;
-      background-color: #F3F2F1;
+      ${'' /* background-color: #F3F2F1; */}
       color: #252423;
       margin-bottom: 0;
       min-width: 10.6rem;
@@ -54,26 +54,29 @@ const ButtonInner = styled.div`
 `;
 
 const Wrapper = styled.div`
-  display: inline-block;
+  display: block;
   clear: both;
   margin-bottom: 2px;
   font-family: Helvetica, Arial, sans-serif;
   float: ${({ author }) => author === 'user' ? "right" : "left"};
 `;
 
-const TextButton = styled(Text)`
-  border-bottom-left-radius: 5px;
-`;
+// const TextButton = styled(Text)`
+//   border-bottom-left-radius: 5px;
+// `;
 
 
-export default function Button({ message, button: { title } }) {
+export default function Button({ message, platform, button: { title } }) {
 
   return (
     <Wrapper>
-      <TextButton message={{...message, author: message.author.BOT }} />
-      <ButtonContainer platform={message.platform} onClick={action('clicked')}>
-        <ButtonInner platform={message.platform}>{title}</ButtonInner>
+      {/* <TextButton message={{...message, author: message.author.BOT }} /> */}
+      <ButtonContainer platform={platform} onClick={action('clicked')}>
+        <ButtonInner platform={platform}>{title}</ButtonInner>
       </ButtonContainer>
+      {/* <ButtonContainer onClick={action('clicked')}>
+        <ButtonInner>{title}</ButtonInner>
+      </ButtonContainer> */}
     </Wrapper>
   );
 }
