@@ -2,6 +2,8 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 import Text from './Text';
+import { Messenger_Button, Teams_Button } from '../Button/Button.stories';
+// import Button from '../Button/Button';
 
 export default {
   component: Text,
@@ -27,22 +29,34 @@ export const actionsData = {
   onArchiveTask: action('onArchiveTask'),
 };
 
-export const Messenger_Bot = () => (
+export const Messenger_Bot_Text = () => (
   <>
-    <Text message={{ ...messageData, author: messageData.author.BOT }} {...actionsData} />
+    <Text message={{ ...messageData, author: messageData.author.BOT }} />
   </>
 );
 
-export const Messenger_User = () => (
-  <Text message={{ ...messageData, platform: 'messenger', author: messageData.author.USER }} {...actionsData} />
+export const Messenger_User_Text = () => (
+  <Text message={{ ...messageData, platform: 'messenger', author: messageData.author.USER }} />
 );
 
-export const Teams_Bot = () => (
+export const Messenger_Text_With_Button = () => (
   <>
-    <Text message={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} {...actionsData} />
+    <Text message={{ ...messageData, author: messageData.author.BOT }} button={Messenger_Button} />
   </>
 );
 
-export const Teams_User = () => (
-  <Text message={{ ...messageData, platform: 'teams', author: messageData.author.USER }} {...actionsData} />
+export const Teams_Bot_Text = () => (
+  <>
+    <Text message={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} />
+  </>
+);
+
+export const Teams_User_Text = () => (
+  <Text message={{ ...messageData, platform: 'teams', author: messageData.author.USER }} />
+);
+
+export const Teams_Text_With_Button = () => (
+  <>
+    <Text message={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} button={Messenger_Button} />
+  </>
 );
