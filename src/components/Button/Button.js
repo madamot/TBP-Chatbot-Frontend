@@ -7,7 +7,7 @@ import Text from '../Text/Text';
 const ButtonContainer = styled.div`
   display: flex;
   clear: both;
-  margin-bottom: 2px;
+  ${'' /* margin-bottom: 2px; */}
   font-family: Helvetica, Arial, sans-serif;
 
   ${({ platform }) =>
@@ -47,9 +47,9 @@ const ButtonInner = styled.div`
       font-weight: normal;
       border-radius: 3px;
       border: 1px solid magenta;
-      background-color: #F3F2F1;
+      background-color: #eee;
       color: magenta;
-      margin-bottom: .6rem;
+      margin-top: .6rem;
     `}
 `;
 

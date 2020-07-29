@@ -4,11 +4,23 @@ import styled, { css } from 'styled-components';
 import "../../index.css"
 
 const Message = styled.div`
-  display: flex;
+  ${'' /* display: flex; */}
   clear: both;
   margin-bottom: 2px;
   font-family: Helvetica, Arial, sans-serif;
   float: ${({ author }) => author === 'user' ? "right" : "left"};
+  ${({ platform }) =>
+    platform === 'teams' &&
+    css`
+      background-color: #eee;
+      padding: .8rem 1.6rem .8rem 1.6rem;
+    `}
+  ${({ author, platform }) =>
+    author === 'user' && platform === 'teams' &&
+    css`
+      background: ${({ platform }) => platform === 'teams' ? "#e5e5f1" : "#0084ff"};
+      color: ${({ platform }) => platform === 'teams' ? "#252423" : "#fff"};
+    `}
 `;
 
 const MainMessage = styled.div`
@@ -19,16 +31,17 @@ const MainMessage = styled.div`
   border-radius: 30px;
   background: #eee;
 
+  border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
+
   ${({ platform }) =>
     platform === 'teams' &&
     css`
       border-radius: 3px;
+      padding: 0;
       overflow: hidden;
       position: relative;
-      padding: .8rem 1.6rem .8rem 1.6rem;
-      background-color: #F3F2F1;
       color: #252423;
-      margin-bottom: .6rem;
+      ${'' /* margin-bottom: .6rem; */}
       min-width: 10.6rem;
     `}
 
@@ -49,8 +62,8 @@ const Meta = styled.div`
 
 export default function Text({ button: Button, className, message: { id, title, platform, author, date, user }}) {
   return (
-      <Message author={author}>
-        <MainMessage className={className} platform={platform} author={author}>
+      <Message author={author} platform={platform}>
+        <MainMessage className={className} button={Button} platform={platform} author={author}>
           <Meta platform={platform}>
             {author} {date}
           </Meta>
@@ -59,7 +72,7 @@ export default function Text({ button: Button, className, message: { id, title, 
         {
           (Button) ?
             <Button platform={platform} />
-              // <p>{platform}</p>
+            // <p>{platform}</p>
           : null
         }
       </Message>
