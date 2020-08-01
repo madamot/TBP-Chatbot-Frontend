@@ -1,12 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+export default function Image({message:{ imgSrc }}) {
 
-export default function Image() {
-
+  console.log(imgSrc);
     return (
       <div>
-        <p>Image</p>
+        {/* <p>{img}</p> */}
+        <img src={imgSrc} />
       </div>
     );
 }

@@ -9,11 +9,15 @@ export default {
   excludeStories: /.*Data$/,
 };
 
+export const imageData = {
+  id: '1',
+  imgSrc: require('../../images/decepticons.jpg'),
+};
 
 export const Messenger_Image = () => (
-  <Image />
+  <Image message={imageData} />
 );
 
 export const Teams_Image = () => (
-  <Image />
+  <Image message={imageData} />
 );
