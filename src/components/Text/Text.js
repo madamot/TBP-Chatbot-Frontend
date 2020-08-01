@@ -13,6 +13,7 @@ const Message = styled.div`
     platform === 'teams' &&
     css`
       background-color: #eee;
+      border-radius: 3px;
       padding: .8rem 1.6rem .8rem 1.6rem;
     `}
   ${({ author, platform }) =>
