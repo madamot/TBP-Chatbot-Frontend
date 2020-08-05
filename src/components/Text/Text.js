@@ -30,7 +30,6 @@ const MainMessage = styled.div`
   margin: 1px 0;
   border-radius: 30px;
   background: #eee;
-
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
 
   ${({ platform }) =>
