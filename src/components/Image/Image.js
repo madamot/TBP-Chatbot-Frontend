@@ -44,6 +44,7 @@ const Picture = styled.img`
     platform === 'messenger' &&
     css`
       border-radius: 30px;
+      border: grey solid 1px;
     `}
 `;
 
