@@ -9,20 +9,45 @@ export default {
   excludeStories: /.*Data$/,
 };
 
-export const imageData = {
-  id: '1',
-  imgSrc: require('../../images/decepticons.jpg'),
-  platform: 'messenger',
-  author: {
-    BOT: 'bot',
-    USER: 'user',
+export const carouselData = [
+  {
+    id: '1',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'messenger',
+    author: 'bot'
   },
-};
+  {
+    id: '2',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'messenger',
+    author: 'bot'
+  },
+  {
+    id: '3',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'messenger',
+    author: 'bot'
+  },
+  {
+    id: '4',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'messenger',
+    author: 'bot'
+  },
+];
 
 export const Messenger_Carousel = () => (
-  <Carousel />
+  <Carousel carousel={carouselData} />
 );
 
 export const Teams_Carousel = () => (
-  <Carousel />
+  <Carousel carousel={carouselData} />
 );
