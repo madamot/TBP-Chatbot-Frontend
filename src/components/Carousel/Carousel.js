@@ -16,13 +16,13 @@ const Message = styled.div`
   font-family: Helvetica, Arial, sans-serif;
   float: left;
   font-size: 14px;
-  ${'' /* max-width: 30%; */}
+  max-width: 30%;
   min-width: 30%;
   margin: 1px;
-  padding: 6px 12px 7px;
   font-size: 14px;
-  border-radius: 5px;
-  background: #eee;
+  border-radius: 30px;
+  background: #fff;
+  border: 1px solid #eee;
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
 
   ${({ platform }) =>
@@ -48,10 +48,23 @@ const Message = styled.div`
     `}
 `;
 
+const Caption = styled.div`
+  padding: 0px 12px 6px;
+`;
+
 const Picture = styled.img`
   position: relative;
   overflow: hidden;
   max-width: 100%;
+  border-radius: 30px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+  ${({ platform }) =>
+    platform === 'teams' &&
+    css`
+      border-radius: 0px;
+    `}
 `;
 
 
@@ -100,8 +113,10 @@ export default function Carousel({ carousel }) {
           {carousel.map(carousel => (
             <Message author={carousel.author} platform={carousel.platform}>
               <Picture src={carousel.imgSrc} platform={carousel.platform} />
-              <p>{carousel.title}</p>
-              <p>{carousel.subtitle}</p>
+              <Caption>
+                <p>{carousel.title}</p>
+                <p>{carousel.subtitle}</p>
+              </Caption>
             </Message>
           ))}
         </Container>

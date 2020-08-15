@@ -9,6 +9,28 @@ export default {
   excludeStories: /.*Data$/,
 };
 
+export const singleCarouselData = [
+  {
+    id: '1',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'messenger',
+    author: 'bot'
+  },
+];
+
+export const singleCarouselTeamsData = [
+  {
+    id: '1',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'teams',
+    author: 'bot'
+  },
+];
+
 export const carouselData = [
   {
     id: '1',
@@ -43,6 +65,14 @@ export const carouselData = [
     author: 'bot'
   },
 ];
+
+export const Messenger_Carousel_Single = () => (
+  <Carousel carousel={singleCarouselData} />
+);
+
+export const Teams_Carousel_Single = () => (
+  <Carousel carousel={singleCarouselTeamsData} />
+);
 
 export const Messenger_Carousel = () => (
   <Carousel carousel={carouselData} />
