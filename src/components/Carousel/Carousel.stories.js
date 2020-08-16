@@ -27,6 +27,7 @@ export const singleCarouselTeamsData = [
     subtitle: 'Subtitle',
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'teams',
+    date: '14-07-20',
     author: 'bot'
   },
 ];
@@ -66,6 +67,45 @@ export const carouselData = [
   },
 ];
 
+export const carouselTeamsData = [
+  {
+    id: '1',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'teams',
+    date: '14-07-20',
+    author: 'bot'
+  },
+  {
+    id: '2',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'teams',
+    date: '14-07-20',
+    author: 'bot'
+  },
+  {
+    id: '3',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'teams',
+    date: '14-07-20',
+    author: 'bot'
+  },
+  {
+    id: '4',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'teams',
+    date: '14-07-20',
+    author: 'bot'
+  },
+];
+
 export const Messenger_Carousel_Single = () => (
   <Carousel carousel={singleCarouselData} />
 );
@@ -79,5 +119,5 @@ export const Messenger_Carousel = () => (
 );
 
 export const Teams_Carousel = () => (
-  <Carousel carousel={carouselData} />
+  <Carousel carousel={carouselTeamsData} />
 );

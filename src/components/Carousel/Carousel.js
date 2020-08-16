@@ -9,6 +9,19 @@ const Container = styled.div`
   white-space: nowrap;
 `;
 
+const TeamsContainer = styled.div`
+${({ platform }) =>
+  platform === 'teams' &&
+  css`
+    padding: 10px;
+    background: #eee;
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+  `}
+`;
+
 const Message = styled.div`
   display: inline-block;
   clear: both;
@@ -50,6 +63,13 @@ const Message = styled.div`
 
 const Caption = styled.div`
   padding: 0px 12px 6px;
+
+  ${({ platform }) =>
+    platform === 'teams' &&
+    css`
+      padding: 0;
+      order: 0;
+    `}
 `;
 
 const Picture = styled.img`
@@ -64,11 +84,18 @@ const Picture = styled.img`
     platform === 'teams' &&
     css`
       border-radius: 0px;
+      order: 1;
     `}
 `;
 
+const Meta = styled.div`
+  display: ${({ platform }) => platform === 'teams' ? "flex" : "none"};
+  flex-grow: 1;
+  font-size: .8rem;
+`;
 
-export default function Carousel({ carousel }) {
+
+export default function Carousel({carousel, carousel: { id, title, subtitle, imgSrc, platform, date, author }}) {
 
   const left = () => {
      scrollLeft(document.getElementById('content'), -300, 1000);
@@ -112,11 +139,16 @@ export default function Carousel({ carousel }) {
         <Container id="content">
           {carousel.map(carousel => (
             <Message author={carousel.author} platform={carousel.platform}>
-              <Picture src={carousel.imgSrc} platform={carousel.platform} />
-              <Caption>
-                <p>{carousel.title}</p>
-                <p>{carousel.subtitle}</p>
-              </Caption>
+              <Meta platform={carousel.platform}>
+                {carousel.author} {carousel.date}
+              </Meta>
+              <TeamsContainer platform={carousel.platform}>
+                <Picture src={carousel.imgSrc} platform={carousel.platform} />
+                <Caption id="info" platform={carousel.platform}>
+                  <p>{carousel.title}</p>
+                  <p>{carousel.subtitle}</p>
+                </Caption>
+              </TeamsContainer>
             </Message>
           ))}
         </Container>
