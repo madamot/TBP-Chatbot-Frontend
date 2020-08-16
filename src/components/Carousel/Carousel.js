@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+import ButtonList from '../ButtonList/ButtonList';
+
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -111,7 +113,7 @@ const Right = styled.button`
 `;
 
 
-export default function Carousel({carousel, carousel: { id, title, subtitle, imgSrc, platform, date, author }}) {
+export default function Carousel({ carousel, carousel: { id, title, subtitle, imgSrc, platform, date, author, button }}) {
 
   const left = () => {
      scrollLeft(document.getElementById('content'), -300, 1000);
@@ -165,6 +167,11 @@ export default function Carousel({carousel, carousel: { id, title, subtitle, img
                   <p>{carousel.subtitle}</p>
                 </Caption>
               </TeamsContainer>
+              {
+                (carousel.button) ?
+                  <ButtonList key={carousel.button.id} platform={carousel.platform} buttons={carousel.button} />
+                : null
+              }
             </Message>
           ))}
           <Left id="left-button" type="button" onClick={left}>&#8592;</Left>

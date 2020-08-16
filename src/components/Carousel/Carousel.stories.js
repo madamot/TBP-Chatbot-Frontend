@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Carousel from './Carousel';
+import { Messenger_Button, Teams_Button } from '../Button/Button.stories';
 
 export default {
   component: Carousel,
@@ -20,6 +21,23 @@ export const singleCarouselData = [
   },
 ];
 
+export const singleCarouselWithButtonData = [
+  {
+    id: '1',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'messenger',
+    author: 'bot',
+    button: [
+      {
+        id: '1',
+        title: 'my button',
+      },
+    ],
+  },
+];
+
 export const singleCarouselTeamsData = [
   {
     id: '1',
@@ -28,7 +46,25 @@ export const singleCarouselTeamsData = [
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'teams',
     date: '14-07-20',
-    author: 'bot'
+    author: 'bot',
+  },
+];
+
+export const singleCarouselWithButtonTeamsData = [
+  {
+    id: '1',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    imgSrc: require('../../images/decepticons.jpg'),
+    platform: 'teams',
+    date: '14-07-20',
+    author: 'bot',
+    button: [
+      {
+        id: '1',
+        title: 'my button',
+      },
+    ],
   },
 ];
 
@@ -39,7 +75,13 @@ export const carouselData = [
     subtitle: 'Subtitle',
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'messenger',
-    author: 'bot'
+    author: 'bot',
+    button: [
+      {
+        id: '1',
+        title: 'my button',
+      },
+    ],
   },
   {
     id: '2',
@@ -55,7 +97,13 @@ export const carouselData = [
     subtitle: 'Subtitle',
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'messenger',
-    author: 'bot'
+    author: 'bot',
+    button: [
+      {
+        id: '1',
+        title: 'my button',
+      },
+    ],
   },
   {
     id: '4',
@@ -75,7 +123,13 @@ export const carouselTeamsData = [
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'teams',
     date: '14-07-20',
-    author: 'bot'
+    author: 'bot',
+    button: [
+      {
+        id: '1',
+        title: 'my button',
+      },
+    ],
   },
   {
     id: '2',
@@ -93,7 +147,13 @@ export const carouselTeamsData = [
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'teams',
     date: '14-07-20',
-    author: 'bot'
+    author: 'bot',
+    button: [
+      {
+        id: '1',
+        title: 'my button',
+      },
+    ],
   },
   {
     id: '4',
@@ -110,12 +170,20 @@ export const Messenger_Carousel_Single = () => (
   <Carousel carousel={singleCarouselData} />
 );
 
-export const Teams_Carousel_Single = () => (
-  <Carousel carousel={singleCarouselTeamsData} />
+export const Messenger_Carousel_Single_With_Button = () => (
+  <Carousel carousel={singleCarouselWithButtonData} button={Messenger_Button} />
 );
 
 export const Messenger_Carousel = () => (
   <Carousel carousel={carouselData} />
+);
+
+export const Teams_Carousel_Single = () => (
+  <Carousel carousel={singleCarouselTeamsData} />
+);
+
+export const Teams_Carousel_Single_With_Button = () => (
+  <Carousel carousel={singleCarouselWithButtonTeamsData} button={Teams_Button} />
 );
 
 export const Teams_Carousel = () => (
