@@ -94,6 +94,22 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
+const Left = styled.button`
+  float: left;
+  left: 0;
+  position: absolute;
+  top: 20%;
+  opacity: 50%;
+`;
+
+const Right = styled.button`
+  float: right;
+  right: 0;
+  position: absolute;
+  top: 20%;
+  opacity: 50%;
+`;
+
 
 export default function Carousel({carousel, carousel: { id, title, subtitle, imgSrc, platform, date, author }}) {
 
@@ -151,9 +167,9 @@ export default function Carousel({carousel, carousel: { id, title, subtitle, img
               </TeamsContainer>
             </Message>
           ))}
+          <Left id="left-button" type="button" onClick={left}>&#8592;</Left>
+          <Right id="right-button" type="button" onClick={right}>&#8594;</Right>
         </Container>
-        <button id="left-button" type="button" onClick={left}>Slide left</button>
-        <button id="right-button" type="button" onClick={right}>Slide right</button>
       </>
     );
 }
