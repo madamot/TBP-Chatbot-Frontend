@@ -11,30 +11,51 @@ export default {
   excludeStories: /.*Data$/,
 };
 
-export const DefaultButtonData = [
+export const QuickRepliesData = [
   {
     id: '1',
-    title: 'my button'
+    title: 'Reply 1',
+    platform: 'messenger',
   },
   {
     id: '2',
-    title: 'my button'
+    title: 'Reply 2',
+    platform: 'messenger',
   },
   {
     id: '3',
-    title: 'my button'
+    title: 'Reply 3',
+    platform: 'messenger',
+  },
+]
+
+export const QuickRepliesTeamsData = [
+  {
+    id: '1',
+    title: 'Reply 1',
+    platform: 'teams',
+  },
+  {
+    id: '2',
+    title: 'Reply 2',
+    platform: 'teams',
+  },
+  {
+    id: '3',
+    title: 'Reply 3',
+    platform: 'teams',
   },
 ]
 
 
 export const Messenger_Quickreply = () => (
   <>
-    <QuickReply />
+    <QuickReply QuickRepliesData={QuickRepliesData} />
   </>
 );
 
 export const Teams_Quickreply = () => (
   <>
-    <QuickReply />
+    <QuickReply QuickRepliesData={QuickRepliesTeamsData} />
   </>
 );
