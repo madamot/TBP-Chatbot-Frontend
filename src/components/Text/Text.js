@@ -48,7 +48,22 @@ const MainMessage = styled.div`
     author === 'user' &&
     css`
       float: right;
-      background: ${({ platform }) => platform === 'teams' ? "#e5e5f1" : "#0084ff"};
+      ${'' /* background: ${({ platform }) => platform === 'teams' ? "#e5e5f1" : "#0084ff"}; */}
+      ${({ platform }) =>
+        platform === 'teams' &&
+        css`
+          background: #e5e5f1;
+        `}
+      ${({ platform }) =>
+        platform === 'messenger' &&
+        css`
+          background: #0084ff;
+        `}
+      ${({ platform }) =>
+        platform === 'workplace' &&
+        css`
+          background: #373e4d;
+        `}
       color: ${({ platform }) => platform === 'teams' ? "#252423" : "#fff"};
     `}
 `;

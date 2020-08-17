@@ -40,6 +40,10 @@ export const Messenger_User_Text = () => (
   <Text message={{ ...messageData, platform: 'messenger', author: messageData.author.USER }} />
 );
 
+export const Workplace_User_Text = () => (
+  <Text message={{ ...messageData, platform: 'workplace', author: messageData.author.USER }} />
+);
+
 export const Messenger_Text_With_Button = () => (
   <>
     <Text message={{ ...messageData, author: messageData.author.BOT }} button={Messenger_Button} />
