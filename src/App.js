@@ -10,7 +10,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <div style={{ maxWidth: "300px" }}>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
         <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
       </div>
     </div>
