@@ -7,7 +7,7 @@ const botName = "messenger";
 
 const messageData = {
   id: '1',
-  title: 'Hello World',
+  // message: 'Hello World',
   platform: 'messenger',
   author: {
     BOT: 'bot',
@@ -27,9 +27,9 @@ const config = {
 
   customComponents: {
     // Replaces the default bot chat message container
-    botChatMessage: (props) => <Text message={{ ...messageData, author: messageData.author.BOT }} />,
+    botChatMessage: (props) => <Text {...props} data={{ ...messageData, author: messageData.author.BOT }} />,
     // Replaces the default user chat message
-    userChatMessage: (props) => <Text message={{ ...messageData, platform: 'messenger', author: messageData.author.USER }} />
+    userChatMessage: (props) => <Text {...props} data={{ ...messageData, platform: 'messenger', author: messageData.author.USER }} />
   },
 }
 
