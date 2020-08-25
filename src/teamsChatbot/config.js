@@ -3,12 +3,13 @@ import { createChatBotMessage } from "react-chatbot-kit";
 
 import Text from "../components/Text/Text";
 
-const botName = "messenger";
+const botName = "teams";
+// const test = ${config.platform};
 
 const messageData = {
   id: '1',
   // message: 'Hello World',
-  platform: 'messenger',
+  platform: botName,
   author: {
     BOT: 'bot',
     USER: 'user',
@@ -21,7 +22,7 @@ const config = {
   botName: botName,
   initialMessages: [
     createChatBotMessage(
-      `Hi I'm ${botName}. I’m here to help you explain how I work.`
+      `Hi I'm ${botName} bot. I’m here to help you explain how I work.`
     ),
   ],
 
@@ -29,7 +30,7 @@ const config = {
     // Replaces the default bot chat message container
     botChatMessage: (props) => <Text {...props} data={{ ...messageData, author: messageData.author.BOT }} />,
     // Replaces the default user chat message
-    userChatMessage: (props) => <Text {...props} data={{ ...messageData, platform: 'messenger', author: messageData.author.USER }} />
+    userChatMessage: (props) => <Text {...props} data={{ ...messageData, author: messageData.author.USER }} />
   },
 }
 
