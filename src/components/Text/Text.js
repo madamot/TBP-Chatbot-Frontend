@@ -26,9 +26,9 @@ const Message = styled.div`
 const MainMessage = styled.div`
   padding: 6px 12px 7px;
   font-size: 14px;
-  max-width: 95%;
+  ${'' /* max-width: 85%; */}
   margin: 1px 0;
-  border-radius: 30px;
+  border-radius: 1.3em;
   background: #eee;
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
 
@@ -41,13 +41,13 @@ const MainMessage = styled.div`
       position: relative;
       color: #252423;
       ${'' /* margin-bottom: .6rem; */}
-      min-width: 10.6rem;
+      ${'' /* min-width: 10.6rem; */}
     `}
 
   ${({ author, platform }) =>
     author === 'user' &&
     css`
-      float: right;
+      ${'' /* float: right; */}
       ${'' /* background: ${({ platform }) => platform === 'teams' ? "#e5e5f1" : "#0084ff"}; */}
       ${({ platform }) =>
         platform === 'teams' &&

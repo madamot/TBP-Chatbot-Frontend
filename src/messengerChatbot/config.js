@@ -22,15 +22,30 @@ const config = {
   botName: botName,
   initialMessages: [
     createChatBotMessage(
-      `Hi I'm ${botName} bot. I’m here to help you explain how I work.`
+      `Hi I'm ${botName} bot. I’m here to help you visualise the bot you just configured.`,
+      {
+        withAvatar: false,
+      }
+    ),
+    createChatBotMessage(
+      `second message.`,
+      {
+        delay: 500,
+      }
+    ),
+    createChatBotMessage(
+      `third message.`,
+      {
+        delay: 1000,
+      }
     ),
   ],
 
   customComponents: {
     // Replaces the default bot chat message container
-    botChatMessage: (props) => <Text data={{...props, ...messageData, author: messageData.author.BOT }} />,
+    botChatMessage: (props) => <Text className='message' data={{...props, ...messageData, author: messageData.author.BOT }} />,
     // Replaces the default user chat message
-    userChatMessage: (props) => <Text data={{...props, ...messageData, author: messageData.author.USER }} />
+    userChatMessage: (props) => <Text className='message' data={{...props, ...messageData, author: messageData.author.USER }} />
   },
 }
 

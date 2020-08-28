@@ -15,7 +15,7 @@ export default {
 
 export const messageData = {
   id: '1',
-  message: 'Hello World',
+  message: 'Hello World!',
   platform: 'messenger',
   author: {
     BOT: 'bot',
@@ -31,9 +31,7 @@ export const actionsData = {
 };
 
 export const Messenger_Bot_Text = () => (
-  <>
-    <Text data={{ ...messageData, author: messageData.author.BOT }} />
-  </>
+  <Text data={{ ...messageData, author: messageData.author.BOT }} />
 );
 
 export const Messenger_User_Text = () => (

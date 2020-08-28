@@ -22,7 +22,7 @@ const config = {
   botName: botName,
   initialMessages: [
     createChatBotMessage(
-      `Hi I'm ${botName} bot. I’m here to help you explain how I work.`
+      `Hi I'm ${botName} bot. I’m here to help you explain the bot you just configured.`
     ),
   ],
 
