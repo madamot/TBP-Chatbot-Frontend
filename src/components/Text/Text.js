@@ -74,7 +74,7 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
-export default function Text({ message, button: Button, buttonList: ButtonList, className, data: { id, title, platform, author, date, user }}) {
+export default function Text({button: Button, buttonList: ButtonList, className, data: { id, message, title, platform, author, date, user }}) {
   return (
       <Message author={author} platform={platform}>
         <MainMessage className={className} button={Button} platform={platform} author={author}>

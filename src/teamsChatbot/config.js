@@ -28,9 +28,9 @@ const config = {
 
   customComponents: {
     // Replaces the default bot chat message container
-    botChatMessage: (props) => <Text {...props} data={{ ...messageData, author: messageData.author.BOT }} />,
+    botChatMessage: (props) => <Text data={{...props, ...messageData, author: messageData.author.BOT }} />,
     // Replaces the default user chat message
-    userChatMessage: (props) => <Text {...props} data={{ ...messageData, author: messageData.author.USER }} />
+    userChatMessage: (props) => <Text data={{...props, ...messageData, author: messageData.author.USER }} />
   },
 }
 
