@@ -4,12 +4,12 @@ class ActionProvider {
     this.setState = setStateFunc;
   }
 
-  handleCarouselExamle = () => {
+  handleCarouselExample = () => {
     const message = this.createChatBotMessage(
       "This will have a Carousel.",
       {
-        withAvatar: true,
-        widget: "overview",
+        withAvatar: false,
+        widget: "carousel",
         delay: 500,
       }
     );
@@ -17,12 +17,12 @@ class ActionProvider {
     this.addMessageToBotState(message);
   };
 
-  handleButtonExamle = () => {
+  handleButtonExample = () => {
     const message = this.createChatBotMessage(
       "This will have a button.",
       {
-        withAvatar: true,
-        widget: "overview",
+        withAvatar: false,
+        widget: "button",
         delay: 500,
       }
     );
@@ -46,7 +46,7 @@ class ActionProvider {
     const message = this.createChatBotMessage(
       "How can I help?",
       {
-        withAvatar: true,
+        withAvatar: false,
         delay: 500,
       }
     );

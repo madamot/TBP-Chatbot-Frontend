@@ -8,11 +8,11 @@ class MessageParser {
     const lowerCase = message.toLowerCase();
 
     if (lowerCase.includes("button")) {
-      return this.actionProvider.handleButtonExamle();
+      return this.actionProvider.handleButtonExample();
     }
 
     if (lowerCase.includes("carousel")) {
-      return this.actionProvider.handleCarouselExamle();
+      return this.actionProvider.handleCarouselExample();
     }
 
     if (lowerCase.includes("help")) {
