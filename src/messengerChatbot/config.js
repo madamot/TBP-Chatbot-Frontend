@@ -2,6 +2,7 @@ import React, { Component }  from 'react';
 import { createChatBotMessage } from "react-chatbot-kit";
 
 import Text from "../components/Text/Text";
+// import Text from "../components/Text/Text";
 
 const botName = "messenger";
 // const test = ${config.platform};
