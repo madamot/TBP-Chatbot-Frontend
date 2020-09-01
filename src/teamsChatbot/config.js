@@ -22,7 +22,13 @@ const config = {
   botName: botName,
   initialMessages: [
     createChatBotMessage(
-      `Hi I'm ${botName} bot. I’m here to help you explain the bot you just configured.`
+      `Hi I'm ${botName} bot. I’m here to help you visualise the bot you just configured.`
+    ),
+    createChatBotMessage(
+      `Simply interact with me as you would the live bot to see if everything is working as you expect!`,
+      {
+        delay: 500,
+      }
     ),
   ],
 

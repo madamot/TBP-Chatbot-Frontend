@@ -14,17 +14,18 @@
 
 /* user messenger message stlying */
 
+/* Make the bottom right of the first messenger message cornered */
 .react-chatbot-kit-chat-bot-message-container + .react-chatbot-kit-user-chat-message-container div .message {
   border-bottom-right-radius: 5px;
 }
 
-
+/* If there are multiple messages by the user then the ones in between the first and last messages' right corners are cornered */
 .react-chatbot-kit-user-chat-message-container + .react-chatbot-kit-user-chat-message-container div .message {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  /* background-color: green; */
 }
 
+/* If there is only one message, or the last message, is made to be curved to signify the end of the group of messages the user has sent */
 .react-chatbot-kit-user-chat-message-container:nth-last-child(2) div .message {
   border-bottom-right-radius: 1.3em;
 }
@@ -32,6 +33,7 @@
 
 /* bot messenger message stlying */
 
+/* Make the bottom right of the first messenger message cornered */
 .react-chatbot-kit-chat-bot-message-container:nth-child(1) div .message {
   border-bottom-left-radius: 5px;
 }
@@ -40,10 +42,19 @@
   border-bottom-left-radius: 1.3em;
 } */
 
+/* .react-chatbot-kit-user-chat-message-container + .react-chatbot-kit-chat-bot-message-container div .message {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+} */
+
 .react-chatbot-kit-chat-bot-message-container + .react-chatbot-kit-chat-bot-message-container div .message {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
+/* .react-chatbot-kit-chat-bot-message-container:nth-last-child(2) div .message {
+  border-bottom-right-radius: 1.3em;
+} */
 
 .react-chatbot-kit-chat-bot-message-container:nth-last-child(-n+2) div .message {
   border-bottom-left-radius: 1.3em;

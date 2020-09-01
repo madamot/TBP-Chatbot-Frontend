@@ -28,15 +28,9 @@ const config = {
       }
     ),
     createChatBotMessage(
-      `second message.`,
+      `Simply interact with me as you would the live bot to see if everything is working as you expect!`,
       {
         delay: 500,
-      }
-    ),
-    createChatBotMessage(
-      `third message.`,
-      {
-        delay: 1000,
       }
     ),
   ],
