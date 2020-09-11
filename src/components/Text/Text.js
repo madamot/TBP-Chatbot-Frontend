@@ -32,6 +32,8 @@ const MainMessage = styled.div`
   background: #eee;
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
 
+  border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
+
   ${({ platform }) =>
     platform === 'teams' &&
     css`
