@@ -9,7 +9,7 @@ import Carousel from "../components/Carousel/Carousel";
 const botName = "messenger";
 // const test = ${config.platform};
 
-const messageData = {
+const usermessageData = {
   id: '1',
   // message: 'Hello World',
   platform: botName,
@@ -19,6 +19,24 @@ const messageData = {
   },
   date: '14-07-20',
   updatedAt: new Date(2018, 0, 1, 9, 0),
+};
+
+const botmessageData = {
+  id: '1',
+  // message: 'Hello World',
+  platform: botName,
+  author: {
+    BOT: 'bot',
+    USER: 'user',
+  },
+  date: '14-07-20',
+  updatedAt: new Date(2018, 0, 1, 9, 0),
+  button: [
+    {
+      id: 1,
+      title: 'button',
+    }
+  ]
 };
 
 export const DefaultButtonData = [
@@ -96,9 +114,9 @@ const config = {
 
   customComponents: {
     // Replaces the default bot chat message container
-    botChatMessage: (props) => <Text className='message' data={{...props, ...messageData, author: messageData.author.BOT }} />,
+    botChatMessage: (props) => <Text className='message' data={{...props, ...usermessageData, author: usermessageData.author.BOT }} />,
     // Replaces the default user chat message
-    userChatMessage: (props) => <Text className='message' data={{...props, ...messageData, author: messageData.author.USER }} />
+    userChatMessage: (props) => <Text className='message' data={{...props, ...usermessageData, author: usermessageData.author.USER }} />
   },
 
   widgets: [
