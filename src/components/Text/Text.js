@@ -1,6 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+import ButtonList from '../ButtonList/ButtonList';
+
+
 import "../../index.css"
 
 const Message = styled.div`
@@ -26,9 +29,9 @@ const Message = styled.div`
 const MainMessage = styled.div`
   padding: 6px 12px 7px;
   font-size: 14px;
-  max-width: 95%;
+  ${'' /* max-width: 85%; */}
   margin: 1px 0;
-  border-radius: 30px;
+  border-radius: 1.3em;
   background: #eee;
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
 
@@ -43,13 +46,13 @@ const MainMessage = styled.div`
       position: relative;
       color: #252423;
       ${'' /* margin-bottom: .6rem; */}
-      min-width: 10.6rem;
+      ${'' /* min-width: 10.6rem; */}
     `}
 
   ${({ author, platform }) =>
     author === 'user' &&
     css`
-      float: right;
+      ${'' /* float: right; */}
       ${'' /* background: ${({ platform }) => platform === 'teams' ? "#e5e5f1" : "#0084ff"}; */}
       ${({ platform }) =>
         platform === 'teams' &&
@@ -76,27 +79,30 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
-export default function Text({ button: Button, buttonList: ButtonList, className, message: { id, title, platform, author, date, user }}) {
+export default function Text({ className, data: { id, message, title, platform, author, date, user, button }}) {
   return (
       <Message author={author} platform={platform}>
-        <MainMessage className={className} button={Button} platform={platform} author={author}>
+        <MainMessage className={className} button={button} platform={platform} author={author}>
           <Meta platform={platform}>
             {author} {date}
           </Meta>
-          {title}
+          {message}
         </MainMessage>
-        {
+        {/* {
+          (button) ?
+            <ButtonList key={button.id} platform={button.platform} buttons={button.button} />
+          : null
+          }
+          {
           (Button) ?
             <Button platform={platform} />
-            // <p>{platform}</p>
-          : null
-        }
-        {/* {
-          (ButtonList) ?
-            <ButtonList platform={platform} />
-            <p>{platform}</p>
           : null
         } */}
+        {
+          (button) ?
+            <ButtonList platform={platform} buttons={button} />
+          : null
+        }
       </Message>
   );
 }
