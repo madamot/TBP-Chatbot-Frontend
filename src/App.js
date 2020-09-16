@@ -1,23 +1,24 @@
 import React from 'react';
-import Chatbot from 'react-chatbot-kit';
-
-import messengerConfig from "./messengerChatbot/config";
-import messengerActionProvider from "./messengerChatbot/ActionProvider";
-import messengerMessageParser from "./messengerChatbot/MessageParser";
-
-import teamsConfig from "./teamsChatbot/config";
-import teamsActionProvider from "./teamsChatbot/ActionProvider";
-import teamsMessageParser from "./teamsChatbot/MessageParser";
-
+import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        <Chatbot config={messengerConfig} actionProvider={messengerActionProvider} messageParser={messengerMessageParser} />
-        <Chatbot config={teamsConfig} actionProvider={teamsActionProvider} messageParser={teamsMessageParser} />
-      </div>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
