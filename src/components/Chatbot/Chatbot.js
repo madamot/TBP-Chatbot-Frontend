@@ -7,10 +7,10 @@ import Image from '../Image/Image';
 import Carousel from '../Carousel/Carousel';
 
 const ChatContainer = styled.div`
-  width: 24%;
+  width: 25em;
   position: absolute;
   border: 1px solid #0084ff;
-  height: 400px;
+  height: 30em;
   ${'' /* right: 15px;
   bottom: 15px; */}
   text-align: center;

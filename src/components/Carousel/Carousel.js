@@ -7,7 +7,6 @@ const Container = styled.div`
   display: flex;
   clear: both;
   flex-direction: row;
-  max-width: 90%;
   overflow: auto;
   white-space: nowrap;
 `;
@@ -33,7 +32,7 @@ const Message = styled.div`
   float: left;
   font-size: 14px;
   max-width: 30%;
-  min-width: 30%;
+  min-width: 18rem;
   margin: 1px;
   font-size: 14px;
   border-radius: 30px;
