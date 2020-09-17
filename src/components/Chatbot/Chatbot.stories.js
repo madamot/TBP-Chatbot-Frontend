@@ -43,6 +43,56 @@ const conversation = [
     platform: 'messenger',
     author: 'bot',
   },
+  {
+    id: '1',
+    type: 'carousel',
+    carouselData: [
+      {
+        id: '1',
+        title: 'Title',
+        subtitle: 'Subtitle',
+        imgSrc: require('../../images/decepticons.jpg'),
+        platform: 'messenger',
+        author: 'bot',
+        button: [
+          {
+            id: '1',
+            title: 'my button',
+          },
+        ],
+      },
+      {
+        id: '2',
+        title: 'Title',
+        subtitle: 'Subtitle',
+        imgSrc: require('../../images/decepticons.jpg'),
+        platform: 'messenger',
+        author: 'bot'
+      },
+      {
+        id: '3',
+        title: 'Title',
+        subtitle: 'Subtitle',
+        imgSrc: require('../../images/decepticons.jpg'),
+        platform: 'messenger',
+        author: 'bot',
+        button: [
+          {
+            id: '1',
+            title: 'my button',
+          },
+        ],
+      },
+      {
+        id: '4',
+        title: 'Title',
+        subtitle: 'Subtitle',
+        imgSrc: require('../../images/decepticons.jpg'),
+        platform: 'messenger',
+        author: 'bot'
+      },
+    ]
+  }
 ];
 
 

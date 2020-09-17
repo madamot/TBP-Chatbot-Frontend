@@ -5,6 +5,7 @@ import ButtonList from '../ButtonList/ButtonList';
 
 const Container = styled.div`
   display: flex;
+  clear: both;
   flex-direction: row;
   max-width: 90%;
   overflow: auto;
