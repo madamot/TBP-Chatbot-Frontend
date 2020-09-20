@@ -8,7 +8,7 @@ import Carousel from '../Carousel/Carousel';
 
 const ChatContainer = styled.div`
   width: 25em;
-  position: absolute;
+  ${'' /* position: absolute; */}
   border: 1px solid #0084ff;
   height: 30em;
   ${'' /* right: 15px;
@@ -17,30 +17,20 @@ const ChatContainer = styled.div`
   overflow-y: scroll;
 `;
 
-const getNotification = msgData => ({
-  text: <Text data={{...msgData}} />,
-  image: <Image message={{...msgData}} />,
-  carousel: <Carousel carousel={msgData.carouselData} />,
+const getNotification = (msgData, platform) => ({
+  text: <Text data={{...msgData, platform: platform}} />,
+  image: <Image message={{...msgData, platform: platform}} />,
+  carousel: <Carousel carousel={msgData.carouselData} platform={platform} />,
   // error: <Error />,
 });
 
-export default function Chatbot({conversation}) {
-
-
-
-  // function Notification({ status }) {
-  //   return (
-  //     <div>
-  //       {NOTIFICATION_STATES[status]}
-  //     </div>
-  //   );
-  // }
+export default function Chatbot({conversation, platform}) {
 
     return (
       <ChatContainer>
         {conversation.map(msgData => (
           <div>
-            {getNotification(msgData)[msgData.type]}
+            {getNotification(msgData, platform)[msgData.type]}
           </div>
         ))}
       </ChatContainer>

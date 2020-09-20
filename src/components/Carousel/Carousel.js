@@ -113,7 +113,7 @@ const Right = styled.button`
 `;
 
 
-export default function Carousel({ carousel, carousel: { id, title, subtitle, imgSrc, platform, date, author, button }}) {
+export default function Carousel({ carousel, platform, carousel: { id, title, subtitle, imgSrc, date, author, button }}) {
 
   const left = () => {
      scrollLeft(document.getElementById('content'), -300, 1000);
@@ -156,20 +156,20 @@ export default function Carousel({ carousel, carousel: { id, title, subtitle, im
       <>
         <Container id="content">
           {carousel.map(carousel => (
-            <Message author={carousel.author} platform={carousel.platform}>
-              <Meta platform={carousel.platform}>
+            <Message author={carousel.author} platform={platform}>
+              <Meta platform={platform}>
                 {carousel.author} {carousel.date}
               </Meta>
-              <TeamsContainer platform={carousel.platform}>
-                <Picture src={carousel.imgSrc} platform={carousel.platform} />
-                <Caption id="info" platform={carousel.platform}>
+              <TeamsContainer platform={platform}>
+                <Picture src={carousel.imgSrc} platform={platform} />
+                <Caption id="info" platform={platform}>
                   <p>{carousel.title}</p>
                   <p>{carousel.subtitle}</p>
                 </Caption>
               </TeamsContainer>
               {
                 (carousel.button) ?
-                  <ButtonList key={carousel.button.id} platform={carousel.platform} buttons={carousel.button} />
+                  <ButtonList key={carousel.button.id} platform={platform} buttons={carousel.button} />
                 : null
               }
             </Message>
