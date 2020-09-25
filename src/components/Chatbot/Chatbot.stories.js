@@ -101,7 +101,7 @@ const conversation = [
   {
     id: '1',
     type: 'text',
-    message: 'Hello World!',
+    title: 'Hello World!',
     platform: 'messenger',
     author: 'bot',
     date: '14-07-20',
@@ -110,7 +110,7 @@ const conversation = [
   {
     id: '2',
     type: 'text',
-    message: 'How are we?',
+    title: 'How are we?',
     platform: 'messenger',
     author: 'bot',
     date: '14-07-20',
