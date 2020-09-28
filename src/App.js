@@ -1,14 +1,15 @@
 import React from 'react';
-import Chatbot from './components/Chatbot/Chatbot';
+
+import ChatbotViews from './components/ChatbotViews/ChatbotViews.js';
+import UserInput from './components/UserInput/UserInput.js';
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        {/* <Chatbot conversation={conversation} /> */}
-        chatbot app
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <ChatbotViews />
       </div>
     </div>
   );
