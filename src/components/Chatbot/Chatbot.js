@@ -17,7 +17,7 @@ const ChatContainer = styled.div`
   overflow-y: scroll;
 `;
 
-const getNotification = (msgData, platform) => ({
+const getMessage = (msgData, platform) => ({
   text: <Text data={{...msgData, platform: platform}} />,
   image: <Image message={{...msgData, platform: platform}} />,
   carousel: <Carousel carousel={msgData.carouselData} platform={platform} />,
@@ -34,7 +34,7 @@ export default function Chatbot({conversation, platform}) {
         <ChatContainer>
           {conversation.map(msgData => (
             <div>
-              {getNotification(msgData, platform)[msgData.type]}
+              {getMessage(msgData, platform)[msgData.type]}
             </div>
           ))}
         </ChatContainer>
