@@ -61,10 +61,7 @@ export default function UserInput({platform}) {
 
     return (
       <Form platform={platform} >
-        <p>></p>
-        {/* <label> */}
         <Input type="text" name="name" platform={platform} />
-        {/* </label> */}
         <Submit type="submit" value="Submit" platform={platform}>
           <FontAwesomeIcon icon={faPaperPlane} value="Submit" />
         </Submit>

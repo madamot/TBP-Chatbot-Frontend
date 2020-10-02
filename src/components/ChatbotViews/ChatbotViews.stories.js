@@ -103,10 +103,3 @@ export const Chatbots = () => (
     <ChatbotViews conversation={conversation} />
   </>
 );
-
-// export const Chatbot_and_input = () => (
-//   <>
-//     <ChatbotViews />
-//     <UserInput />
-//   </>
-// );
