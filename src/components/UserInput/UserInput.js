@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -57,11 +57,19 @@ const Form = styled.form`
 `;
 
 
-export default function UserInput({platform}) {
+export default function UserInput({platform, addMessage}) {
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!message) return;
+    addMessage(message);
+    setMessage('');
+  }
 
     return (
-      <Form platform={platform} >
-        <Input type="text" name="name" platform={platform} />
+      <Form platform={platform} onSubmit={handleSubmit}>
+        <Input type="title" name="name" platform={platform} value={message} onChange={e => setMessage(e.target.value)} />
         <Submit type="submit" value="Submit" platform={platform}>
           <FontAwesomeIcon icon={faPaperPlane} value="Submit" />
         </Submit>

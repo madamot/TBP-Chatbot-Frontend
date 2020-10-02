@@ -24,7 +24,7 @@ const getMessage = (msgData, platform) => ({
   // error: <Error />,
 });
 
-export default function Chatbot({conversation, platform}) {
+export default function Chatbot({conversation, platform, addMessage}) {
 
     return (
       <div style={{
@@ -38,7 +38,7 @@ export default function Chatbot({conversation, platform}) {
             </div>
           ))}
         </ChatContainer>
-        <UserInput platform={platform} />
+        <UserInput platform={platform} addMessage={addMessage} />
       </div>
       );
 }
