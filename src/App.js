@@ -21,6 +21,22 @@ function App() {
     fetchData();
   }, []);
 
+  const send = (text, newConvo) => {
+    axios.post('http://localhost:5000/api/chat/', {
+    title: text,
+  })
+  .then(function (response) {
+    // axios.get('http://localhost:5000/api/chat/')
+    const res = [...newConvo, response.data];
+    setConvo(res);
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  }
+
+
   const addMessage = text => {
     const newConvo = [...convo, {
       id: '1',
@@ -30,8 +46,9 @@ function App() {
       date: '14-07-20',
       updatedAt: new Date(2018, 0, 1, 9, 0),
     },];
-    setConvo(newConvo);
-  }
+    // setConvo(newConvo);
+    send(text, newConvo);
+}
 
 
   return (
