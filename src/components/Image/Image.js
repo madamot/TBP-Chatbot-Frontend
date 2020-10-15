@@ -8,7 +8,7 @@ const Message = styled.div`
   font-family: Helvetica, Arial, sans-serif;
   float: left;
   font-size: 14px;
-  max-width: 30%;
+  max-width: 70%;
   margin: 1px 0;
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
 
