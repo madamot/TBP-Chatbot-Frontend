@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 
 import ChatbotViews from './components/ChatbotViews/ChatbotViews.js';
 import UserInput from './components/UserInput/UserInput.js';
@@ -7,35 +6,89 @@ import UserInput from './components/UserInput/UserInput.js';
 import './App.css';
 
 function App() {
-  const [convo, setConvo] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        'http://localhost:5000/api/chat/',
-      );
-
-      setConvo(result.data);
-    };
-
-    fetchData();
-  }, []);
-
-  const send = (text, newConvo) => {
-    axios.post('http://localhost:5000/api/chat/', {
-    title: text,
-  })
-  .then(function (response) {
-    // axios.get('http://localhost:5000/api/chat/')
-    const res = [...newConvo, response.data];
-    setConvo(res);
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-  }
-
+  const [convo, setConvo] = useState([
+    {
+      id: '1',
+      type: 'text',
+      title: 'Hello World!',
+      platform: 'messenger',
+      author: 'bot',
+      date: '14-07-20',
+      updatedAt: new Date(2018, 0, 1, 9, 0),
+    },
+    {
+      id: '2',
+      type: 'text',
+      title: 'How are we?',
+      platform: 'messenger',
+      author: 'bot',
+      date: '14-07-20',
+      updatedAt: new Date(2018, 0, 1, 9, 0),
+      button: [
+        {
+          id: '1',
+          title: 'my button',
+        },
+      ],
+    },
+    {
+      id: '3',
+      type: 'image',
+      imgSrc: require('./images/decepticons.jpg'),
+      platform: 'messenger',
+      author: 'bot',
+    },
+    {
+      id: '1',
+      type: 'carousel',
+      carouselData: [
+        {
+          id: '1',
+          title: 'Title',
+          subtitle: 'Subtitle',
+          imgSrc: require('./images/decepticons.jpg'),
+          platform: 'messenger',
+          author: 'bot',
+          button: [
+            {
+              id: '1',
+              title: 'my button',
+            },
+          ],
+        },
+        {
+          id: '2',
+          title: 'Title',
+          subtitle: 'Subtitle',
+          imgSrc: require('./images/decepticons.jpg'),
+          platform: 'messenger',
+          author: 'bot'
+        },
+        {
+          id: '3',
+          title: 'Title',
+          subtitle: 'Subtitle',
+          imgSrc: require('./images/decepticons.jpg'),
+          platform: 'messenger',
+          author: 'bot',
+          button: [
+            {
+              id: '1',
+              title: 'my button',
+            },
+          ],
+        },
+        {
+          id: '4',
+          title: 'Title',
+          subtitle: 'Subtitle',
+          imgSrc: require('./images/decepticons.jpg'),
+          platform: 'messenger',
+          author: 'bot'
+        },
+      ]
+    }
+  ]);
 
   const addMessage = text => {
     const newConvo = [...convo, {
@@ -46,9 +99,8 @@ function App() {
       date: '14-07-20',
       updatedAt: new Date(2018, 0, 1, 9, 0),
     },];
-    // setConvo(newConvo);
-    send(text, newConvo);
-}
+    setConvo(newConvo);
+  }
 
 
   return (
