@@ -179,13 +179,13 @@ export const Messenger_Carousel = () => (
 );
 
 export const Teams_Carousel_Single = () => (
-  <Carousel carousel={singleCarouselTeamsData} platform='teams' />
+  <Carousel carousel={singleCarouselTeamsData} />
 );
 
 export const Teams_Carousel_Single_With_Button = () => (
-  <Carousel carousel={singleCarouselWithButtonTeamsData} button={Teams_Button} platform='teams' />
+  <Carousel carousel={singleCarouselWithButtonTeamsData} button={Teams_Button} />
 );
 
 export const Teams_Carousel = () => (
-  <Carousel carousel={carouselTeamsData} platform='teams' />
+  <Carousel carousel={carouselTeamsData} />
 );

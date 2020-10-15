@@ -32,48 +32,48 @@ export const actionsData = {
 
 export const Messenger_Bot_Text = () => (
   <>
-    <Text data={{ ...messageData, author: messageData.author.BOT }} />
+    <Text message={{ ...messageData, author: messageData.author.BOT }} />
   </>
 );
 
 export const Messenger_User_Text = () => (
-  <Text data={{ ...messageData, platform: 'messenger', author: messageData.author.USER }} />
+  <Text message={{ ...messageData, platform: 'messenger', author: messageData.author.USER }} />
 );
 
 export const Workplace_User_Text = () => (
-  <Text data={{ ...messageData, platform: 'workplace', author: messageData.author.USER }} />
+  <Text message={{ ...messageData, platform: 'workplace', author: messageData.author.USER }} />
 );
 
 export const Messenger_Text_With_Button = () => (
   <>
-    <Text data={{ ...messageData, author: messageData.author.BOT }} button={Messenger_Button} />
+    <Text message={{ ...messageData, author: messageData.author.BOT }} button={Messenger_Button} />
   </>
 );
 
 export const Messenger_Text_With_Buttons = () => (
   <>
-    <Text data={{ ...messageData, author: messageData.author.BOT }} button={Multiple_Messenger_Buttons} />
+    <Text message={{ ...messageData, author: messageData.author.BOT }} button={Multiple_Messenger_Buttons} />
   </>
 );
 
 export const Teams_Bot_Text = () => (
   <>
-    <Text data={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} />
+    <Text message={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} />
   </>
 );
 
 export const Teams_User_Text = () => (
-  <Text data={{ ...messageData, platform: 'teams', author: messageData.author.USER }} />
+  <Text message={{ ...messageData, platform: 'teams', author: messageData.author.USER }} />
 );
 
 export const Teams_Text_With_Button = () => (
   <>
-    <Text data={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} button={Messenger_Button} />
+    <Text message={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} button={Messenger_Button} />
   </>
 );
 
 export const Teams_Text_With_Buttons = () => (
   <>
-    <Text data={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} button={Multiple_Teams_Buttons} />
+    <Text message={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} button={Multiple_Teams_Buttons} />
   </>
 );
