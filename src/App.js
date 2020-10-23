@@ -9,10 +9,12 @@ import './App.css';
 function App() {
   const [convo, setConvo] = useState([]);
 
+ const id = 'user001'
+
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'http://localhost:5000/api/chat/',
+        `http://localhost:5000/api/chat/${id}`,
       );
 
       setConvo(result.data);
@@ -22,7 +24,7 @@ function App() {
   }, []);
 
   const send = (text, newConvo) => {
-    axios.post('http://localhost:5000/api/chat/', {
+    axios.post(`http://localhost:5000/api/chat/${id}`, {
     title: text,
   })
   .then(function (response) {
