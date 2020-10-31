@@ -50,7 +50,7 @@ const MainMessage = styled.div`
     author === 'user' &&
     css`
       float: right;
-      ${'' /* background: ${({ platform }) => platform === 'teams' ? "#e5e5f1" : "#0084ff"}; */}
+      background: ${({ platform }) => platform === 'teams' ? "#e5e5f1" : "#0084ff"};
       ${({ platform }) =>
         platform === 'teams' &&
         css`
