@@ -69,8 +69,8 @@ export default function UserInput({platform, addMessage}) {
 
     return (
       <Form platform={platform} onSubmit={handleSubmit}>
-        <Input type="title" name="name" platform={platform} value={message} onChange={e => setMessage(e.target.value)} />
-        <Submit type="submit" value="Submit" platform={platform}>
+        <Input type="title" name="name" placeholder="Message..." platform={platform} value={message} onChange={e => setMessage(e.target.value)} />
+        <Submit data-testid="submit-button" type="submit" value="Submit" platform={platform}>
           <FontAwesomeIcon icon={faPaperPlane} value="Submit" />
         </Submit>
       </Form>
