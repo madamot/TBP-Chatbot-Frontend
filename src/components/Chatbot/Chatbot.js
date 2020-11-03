@@ -27,7 +27,9 @@ const getMessage = (msgData, platform) => ({
 export default function Chatbot({conversation, platform, addMessage}) {
 
     return (
-      <div style={{
+      <div
+        data-testid="Chatbot"
+        style={{
         width: "25em",
         border: "1px solid #0084ff"
       }}>
