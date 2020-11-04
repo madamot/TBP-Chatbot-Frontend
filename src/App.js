@@ -57,9 +57,6 @@ function App() {
     <div className="App">
       <div style={{ display: "flex", flexDirection: "column" }}>
         <ChatbotViews addMessage={addMessage} conversation={convo} />
-        {convo.map(msg => (
-          console.log(msg)
-        ))}
       </div>
     </div>
   );

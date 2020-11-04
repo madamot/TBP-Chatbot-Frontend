@@ -28,14 +28,14 @@ export default function Chatbot({conversation, platform, addMessage}) {
 
     return (
       <div
-        data-testid="Chatbot"
+        data-testid={platform}
         style={{
-        width: "25em",
-        border: "1px solid #0084ff"
-      }}>
+          width: "25em",
+          border: "1px solid #0084ff"
+        }}>
         <ChatContainer>
           {conversation.map(msgData => (
-            <div>
+            <div key={msgData.id}>
               {getMessage(msgData, platform)[msgData.type]}
             </div>
           ))}

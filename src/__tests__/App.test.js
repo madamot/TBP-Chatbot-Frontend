@@ -1,26 +1,25 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 
 import App from '../App';
 
-describe('App', () => {
-  test('renders chatbot component', () => {
-    const { queryAllByText } = render(<App />);
-
-    expect(queryAllByText("Chatbot")).toBeTruthy()
-  });
-});
-
 describe('Chatbot', () => {
   test('renders existing messages', async () => {
-    const { findAllByText, queryByText } = render(<App />);
+    const { queryByText, findAllByText } = render(<App />)
 
-    expect(queryByText(/hello world/)).toBeNull();
+    expect(queryByText(/hello world/)).not.toBeInTheDocument()
 
-    screen.debug();
+    const helloWorld = findAllByText('hello world')
 
-    // expect(await findAllByText(/hello world/)).toBeInTheDocument();
-    //
-    // screen.debug();
-  });
-});
+    expect(await helloWorld).toHaveLength(2)
+  })
+})
+
+
+describe('App', () => {
+  test('renders chatbot component', () => {
+    const { queryAllByText } = render(<App />)
+
+    expect(queryAllByText("Chatbot")).toBeTruthy()
+  })
+})
