@@ -35,7 +35,7 @@ export default function Chatbot({conversation, platform, addMessage}) {
         }}>
         <ChatContainer>
           {conversation.map(msgData => (
-            <div key={msgData.id}>
+            <div key={msgData.id + msgData.title}>
               {getMessage(msgData, platform)[msgData.type]}
             </div>
           ))}
