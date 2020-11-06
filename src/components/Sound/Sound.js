@@ -1,6 +1,11 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { action } from '@storybook/addon-actions';
+import AudioPlayer from 'react-modular-audio-player';
+
+import play from "../../images/play.svg";
+import playHover from "../../images/playHover.svg";
+import './Sound.css';
 
 const Message = styled.div`
   display: inline-block;
@@ -42,21 +47,64 @@ const Message = styled.div`
     `}
 `;
 
+const Meta = styled.div`
+  display: ${({ platform }) => platform === 'teams' ? "flex" : "none"};
+  flex-grow: 1;
+  font-size: .8rem;
+`;
+
+const AudioContainer = styled.div`
+  ${({ platform }) =>
+    platform === 'teams' &&
+    css`
+    border: solid 1px black;
+    padding: 5px;
+    margin: 3px;
+    `}
+
+`;
+
+let rearrangedPlayer = [
+  {
+    className: "tier-top",
+    style: {},
+    innerComponents: [
+      {
+        type: "play",
+        style: {width: "fit-content"}
+      },
+      {
+        type: "seek"
+      },
+      {
+        type: "time",
+        style: {width: "fit-content"}
+      },
+    ]
+  },
+]
 
 export default function Sound({data:{ soundSrc, author, date, platform }}) {
 
     return (
       <Message author={author} platform={platform}>
-        {platform}
-        {author}
-        {date}
-        <audio id="player" src="vincent.mp3"></audio>
-        <div>
-          <button onclick="document.getElementById('player').play()">Play</button>
-          <button onclick="document.getElementById('player').pause()">Pause</button>
-          <button onclick="document.getElementById('player').volume += 0.1">Vol +</button>
-          <button onclick="document.getElementById('player').volume -= 0.1">Vol -</button>
-        </div>
+        <Meta platform={platform}>
+          {author} {date}
+        </Meta>
+        <AudioContainer platform={platform}>
+          <AudioPlayer
+            rearrange={rearrangedPlayer}
+            audioFiles={[{ src: "/linkToAudioFile",
+              title: "Toxic",
+            artist: "Britney Spears" }]}
+            playerWidth="10em"
+            playIcon={play}
+            playHoverIcon={playHover}
+            sliderClass="invert-blue-grey"
+            fontSize="1rem"
+            iconSize="1.5rem"
+          />
+        </AudioContainer>
       </Message>
       );
 }
