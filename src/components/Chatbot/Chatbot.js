@@ -6,6 +6,7 @@ import Text from '../Text/Text';
 import Image from '../Image/Image';
 import Carousel from '../Carousel/Carousel';
 import UserInput from '../UserInput/UserInput.js';
+import Sound from '../Sound/Sound';
 
 const ChatContainer = styled.div`
   width: 25em;
@@ -21,7 +22,7 @@ const getMessage = (msgData, platform) => ({
   text: <Text data={{...msgData, platform: platform}} />,
   image: <Image message={{...msgData, platform: platform}} />,
   carousel: <Carousel carousel={msgData.carouselData} platform={platform} />,
-  // error: <Error />,
+  sound: <Sound data={{...msgData, platform: platform}} />,
 });
 
 export default function Chatbot({conversation, platform, addMessage}) {
