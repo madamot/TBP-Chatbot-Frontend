@@ -16,6 +16,7 @@ const ChatContainer = styled.div`
   bottom: 15px; */}
   text-align: center;
   overflow-y: scroll;
+  background-color: ${({ platform }) => platform === 'teams' ? "#F3F2F1" : "#fff"};
 `;
 
 const getMessage = (msgData, platform) => ({
@@ -32,7 +33,7 @@ export default function Chatbot({conversation, platform, addMessage}) {
         width: "25em",
         border: "1px solid #0084ff"
       }}>
-        <ChatContainer>
+        <ChatContainer platform={platform}>
           {conversation.map(msgData => (
             <div>
               {getMessage(msgData, platform)[msgData.type]}

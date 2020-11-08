@@ -47,7 +47,6 @@ const ButtonInner = styled.div`
       font-weight: normal;
       border-radius: 3px;
       border: 1px solid magenta;
-      background-color: #eee;
       color: magenta;
       margin-top: .6rem;
     `}
