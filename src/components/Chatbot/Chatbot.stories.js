@@ -92,7 +92,14 @@ const conversation = [
         author: 'bot'
       },
     ]
-  }
+  },
+  {
+    id: '4',
+    type: 'sound',
+    imgSrc: require('../../images/decepticons.jpg'),
+    date: '14-07-20',
+    author: 'bot',
+  },
 ];
 
 

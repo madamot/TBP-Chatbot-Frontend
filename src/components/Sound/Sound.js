@@ -32,7 +32,7 @@ const Message = styled.div`
       overflow: hidden;
       position: relative;
       padding: 6px 12px 7px;
-      background: #eee;
+      background: #fff;
       color: #252423;
       margin-bottom: .6rem;
       min-width: 10.6rem;
@@ -57,14 +57,16 @@ const AudioContainer = styled.div`
   ${({ platform }) =>
     platform === 'teams' &&
     css`
-    border: solid 1px black;
+    border: solid 1px #E7E6E5;
+    border-radius: 3px;
     padding: 5px;
+    background: #F3F2F1;
     margin: 3px;
     `}
 
 `;
 
-let rearrangedPlayer = [
+let teamsPlayer = [
   {
     className: "tier-top",
     style: {},
@@ -84,6 +86,23 @@ let rearrangedPlayer = [
   },
 ]
 
+let messengerPlayer = [
+  {
+    className: "tier-top",
+    style: {justifyContent: "space-between"},
+    innerComponents: [
+      {
+        type: "play",
+        style: {width: "fit-content"}
+      },
+      {
+        type: "time",
+        style: {width: "fit-content", float: "right"}
+      },
+    ]
+  },
+]
+
 export default function Sound({data:{ soundSrc, author, date, platform }}) {
 
     return (
@@ -92,18 +111,34 @@ export default function Sound({data:{ soundSrc, author, date, platform }}) {
           {author} {date}
         </Meta>
         <AudioContainer platform={platform}>
-          <AudioPlayer
-            rearrange={rearrangedPlayer}
-            audioFiles={[{ src: "/linkToAudioFile",
-              title: "Toxic",
-            artist: "Britney Spears" }]}
-            playerWidth="10em"
-            playIcon={play}
-            playHoverIcon={playHover}
-            sliderClass="invert-blue-grey"
-            fontSize="1rem"
-            iconSize="1.5rem"
-          />
+          {
+            (platform === 'teams') ?
+              <AudioPlayer
+                rearrange={teamsPlayer}
+                audioFiles={[{ src: "/linkToAudioFile",
+                  title: "Toxic",
+                artist: "Britney Spears" }]}
+                playerWidth="10em"
+                playIcon={play}
+                playHoverIcon={playHover}
+                sliderClass="invert-blue-grey"
+                fontSize="1rem"
+                iconSize="1.5rem"
+              />
+
+            : <AudioPlayer
+              rearrange={messengerPlayer}
+              audioFiles={[{ src: "/linkToAudioFile",
+                title: "Toxic",
+              artist: "Britney Spears" }]}
+              playerWidth="10em"
+              playIcon={play}
+              playHoverIcon={playHover}
+              sliderClass="invert-blue-grey"
+              fontSize="1rem"
+              iconSize="1.5rem"
+              />
+          }
         </AudioContainer>
       </Message>
       );
