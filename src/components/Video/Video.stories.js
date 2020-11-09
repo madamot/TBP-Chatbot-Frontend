@@ -6,7 +6,7 @@ import Video from './Video';
 
 export const videoData = {
   id: '1',
-  // soundSrc: require('../../audio/Nevergonnagiveyouup.mp3'),
+  videoSrc: require('../../images/videoplayback.mp4'),
   author: 'bot',
   date: '14-07-20',
 };

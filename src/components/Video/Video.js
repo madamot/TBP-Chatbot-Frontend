@@ -2,6 +2,8 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
+import ReactPlayer from 'react-player';
+
 const Message = styled.div`
   display: inline-block;
   clear: both;
@@ -58,7 +60,7 @@ const VideoContainer = styled.div`
     `}
 `;
 
-export default function Video({data:{ soundSrc, author, date, platform }}) {
+export default function Video({data:{ videoSrc, author, date, platform }}) {
 
     return (
       <Message author={author} platform={platform}>
@@ -66,7 +68,14 @@ export default function Video({data:{ soundSrc, author, date, platform }}) {
           {author} {date}
         </Meta>
         <VideoContainer platform={platform}>
-
+          <ReactPlayer
+            url={videoSrc}
+            config={{
+              file: {
+                attributes: { controls: 1 }
+              },
+            }}
+          />
         </VideoContainer>
       </Message>
       );
