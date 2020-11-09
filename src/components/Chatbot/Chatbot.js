@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import Text from '../Text/Text';
 import Image from '../Image/Image';
 import Carousel from '../Carousel/Carousel';
+import Video from '../Video/Video';
 import UserInput from '../UserInput/UserInput.js';
 
 const ChatContainer = styled.div`
@@ -21,6 +22,7 @@ const getMessage = (msgData, platform) => ({
   text: <Text data={{...msgData, platform: platform}} />,
   image: <Image message={{...msgData, platform: platform}} />,
   carousel: <Carousel carousel={msgData.carouselData} platform={platform} />,
+  video: <Video data={{...msgData, platform: platform}} />,
   // error: <Error />,
 });
 
