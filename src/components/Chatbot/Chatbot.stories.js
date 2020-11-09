@@ -96,7 +96,7 @@ const conversation = [
   {
     id: '4',
     type: 'sound',
-    imgSrc: require('../../images/decepticons.jpg'),
+    soundSrc: require('../../audio/Nevergonnagiveyouup.mp3'),
     date: '14-07-20',
     author: 'bot',
   },

@@ -5,7 +5,7 @@ import Sound from './Sound';
 
 export const soundData = {
   id: '1',
-  soundSrc: require('../../images/decepticons.jpg'),
+  soundSrc: require('../../audio/Nevergonnagiveyouup.mp3'),
   author: 'bot',
   date: '14-07-20',
 };

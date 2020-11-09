@@ -115,9 +115,7 @@ export default function Sound({data:{ soundSrc, author, date, platform }}) {
             (platform === 'teams') ?
               <AudioPlayer
                 rearrange={teamsPlayer}
-                audioFiles={[{ src: "/linkToAudioFile",
-                  title: "Toxic",
-                artist: "Britney Spears" }]}
+                audioFiles={[{ src: soundSrc }]}
                 playerWidth="10em"
                 playIcon={play}
                 playHoverIcon={playHover}
@@ -128,9 +126,7 @@ export default function Sound({data:{ soundSrc, author, date, platform }}) {
 
             : <AudioPlayer
               rearrange={messengerPlayer}
-              audioFiles={[{ src: "/linkToAudioFile",
-                title: "Toxic",
-              artist: "Britney Spears" }]}
+              audioFiles={[{ src: soundSrc }]}
               playerWidth="10em"
               playIcon={play}
               playHoverIcon={playHover}
