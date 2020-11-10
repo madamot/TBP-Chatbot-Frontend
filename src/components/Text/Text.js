@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+import ButtonList from '../ButtonList/ButtonList';
+
 import "../../index.css"
 
 const Message = styled.div`
@@ -76,18 +78,18 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
-export default function Text({ button: Button, data: { title, platform, author, date, user }}) {
+export default function Text({ data: { title, platform, author, date, user, button }}) {
   return (
       <Message author={author} platform={platform}>
-        <MainMessage button={Button} platform={platform} author={author}>
+        <MainMessage button={button} platform={platform} author={author}>
           <Meta platform={platform}>
             {author} {date}
           </Meta>
           {title}
         </MainMessage>
         {
-          (Button) ?
-            <Button platform={platform} />
+          (button) ?
+            <ButtonList key={button.id} platform={platform} buttons={button} />
           : null
         }
       </Message>
