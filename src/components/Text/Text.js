@@ -76,10 +76,10 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
-export default function Text({ button: Button, className, data: { title, platform, author, date, user }}) {
+export default function Text({ button: Button, data: { title, platform, author, date, user }}) {
   return (
       <Message author={author} platform={platform}>
-        <MainMessage className={className} button={Button} platform={platform} author={author}>
+        <MainMessage button={Button} platform={platform} author={author}>
           <Meta platform={platform}>
             {author} {date}
           </Meta>
@@ -88,15 +88,8 @@ export default function Text({ button: Button, className, data: { title, platfor
         {
           (Button) ?
             <Button platform={platform} />
-            // <p>{platform}</p>
           : null
         }
-        {/* {
-          (ButtonList) ?
-            <ButtonList platform={platform} />
-            <p>{platform}</p>
-          : null
-        } */}
       </Message>
   );
 }

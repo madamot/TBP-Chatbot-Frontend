@@ -13,7 +13,7 @@ const ChatContainer = styled.div`
   height: 30em;
   ${'' /* right: 15px;
   bottom: 15px; */}
-  text-align: center;
+  ${'' /* text-align: center; */}
   overflow-y: scroll;
 `;
 

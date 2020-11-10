@@ -163,8 +163,8 @@ export default function Carousel({ carousel, platform, carousel: { id, title, su
               <TeamsContainer platform={platform}>
                 <Picture src={carousel.imgSrc} platform={platform} />
                 <Caption id="info" platform={platform}>
-                  <p>{carousel.title}</p>
-                  <p>{carousel.subtitle}</p>
+                  {carousel.title}<br/>
+                  {carousel.subtitle}
                 </Caption>
               </TeamsContainer>
               {
