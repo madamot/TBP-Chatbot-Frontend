@@ -1,14 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import ButtonList from '../ButtonList/ButtonList';
+import Button from '../Button/Button';
 
 import "../../index.css"
 
 const Message = styled.div`
   ${'' /* display: flex; */}
   clear: both;
-  margin-bottom: 2px;
+  margin: 1px 0;
   font-family: Helvetica, Arial, sans-serif;
   float: ${({ author }) => author === 'user' ? "right" : "left"};
   ${({ platform }) =>
@@ -30,7 +30,7 @@ const MainMessage = styled.div`
   font-size: 14px;
   max-width: 95%;
   margin: 1px 0;
-  border-radius: 30px;
+  border-radius: 20px;
   background: #eee;
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
   border-bottom-right-radius: ${({ button }) => button ? "5px" : null};
@@ -88,7 +88,7 @@ export default function Text({ data: { title, platform, author, date, user, butt
         </MainMessage>
         {
           (button) ?
-            <ButtonList key={button.id} platform={platform} buttons={button} />
+            <Button key={button.id} platform={platform} buttons={button} />
           : null
         }
       </Message>

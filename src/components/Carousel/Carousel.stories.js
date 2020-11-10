@@ -34,6 +34,10 @@ export const singleCarouselWithButtonData = [
         id: '1',
         title: 'my button',
       },
+      {
+        id: '2',
+        title: 'my button 2',
+      },
     ],
   },
 ];

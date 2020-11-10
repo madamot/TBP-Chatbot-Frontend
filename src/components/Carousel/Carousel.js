@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import ButtonList from '../ButtonList/ButtonList';
+import Button from '../Button/Button';
 
 const Container = styled.div`
   display: flex;
@@ -169,7 +169,7 @@ export default function Carousel({ carousel, platform, carousel: { id, title, su
               </TeamsContainer>
               {
                 (carousel.button) ?
-                  <ButtonList key={carousel.button.id} platform={platform} buttons={carousel.button} />
+                  <Button key={carousel.button.id} platform={platform} buttons={carousel.button} />
                 : null
               }
             </Message>
