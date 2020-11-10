@@ -33,8 +33,7 @@ const MainMessage = styled.div`
   border-radius: 30px;
   background: #eee;
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
-
-  border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
+  border-bottom-right-radius: ${({ button }) => button ? "5px" : null};
 
   ${({ platform }) =>
     platform === 'teams' &&

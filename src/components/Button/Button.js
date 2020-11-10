@@ -7,7 +7,7 @@ import Text from '../Text/Text';
 const ButtonContainer = styled.div`
   display: flex;
   clear: both;
-  ${'' /* margin-bottom: 2px; */}
+  margin-bottom: 0;
   font-family: Helvetica, Arial, sans-serif;
 
   ${({ platform }) =>
@@ -27,13 +27,14 @@ const ButtonContainer = styled.div`
 
 const ButtonInner = styled.div`
   flex-grow: 1;
-  width: 0;
-  min-width: 80px;
+  ${'' /* width: 100%; */}
+  ${'' /* min-width: 80px; */}
   padding: 6px 12px 7px;
   font-size: 14px;
-  max-width: 95%;
+  ${'' /* max-width: 95%; */}
   border-radius: 30px;
   border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   border: 2px solid #eee;
   text-align: center;
   color: #0084ff;
@@ -58,7 +59,7 @@ const Wrapper = styled.div`
   clear: both;
   margin-bottom: 2px;
   font-family: Helvetica, Arial, sans-serif;
-  float: ${({ author }) => author === 'user' ? "right" : "left"};
+  ${'' /* float: ${({ author }) => author === 'user' ? "right" : "left"}; */}
 `;
 
 // const TextButton = styled(Text)`
