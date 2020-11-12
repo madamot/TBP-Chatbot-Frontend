@@ -52,7 +52,6 @@ const Message = styled.div`
       background: #eee;
       color: #252423;
       margin-bottom: .6rem;
-      min-width: 10.6rem;
     `}
 
   ${({ author, platform }) =>
