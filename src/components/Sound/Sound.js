@@ -111,30 +111,16 @@ export default function Sound({data:{ soundSrc, author, date, platform }}) {
           {author} {date}
         </Meta>
         <AudioContainer platform={platform}>
-          {
-            (platform === 'teams') ?
-              <AudioPlayer
-                rearrange={teamsPlayer}
-                audioFiles={[{ src: soundSrc }]}
-                playerWidth="10em"
-                playIcon={play}
-                playHoverIcon={playHover}
-                sliderClass="invert-blue-grey"
-                fontSize="1rem"
-                iconSize="1.5rem"
-              />
-
-            : <AudioPlayer
-              rearrange={messengerPlayer}
-              audioFiles={[{ src: soundSrc }]}
-              playerWidth="10em"
-              playIcon={play}
-              playHoverIcon={playHover}
-              sliderClass="invert-blue-grey"
-              fontSize="1rem"
-              iconSize="1.5rem"
-              />
-          }
+          <AudioPlayer
+            rearrange={platform === 'teams' ? teamsPlayer : messengerPlayer}
+            audioFiles={[{ src: soundSrc }]}
+            playerWidth="10em"
+            playIcon={play}
+            playHoverIcon={playHover}
+            sliderClass="invert-blue-grey"
+            fontSize="1rem"
+            iconSize="1.5rem"
+          />
         </AudioContainer>
       </Message>
       );
