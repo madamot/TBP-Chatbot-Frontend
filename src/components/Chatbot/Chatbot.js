@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import Text from '../Text/Text';
 import Image from '../Image/Image';
 import Carousel from '../Carousel/Carousel';
+import Video from '../Video/Video';
 import UserInput from '../UserInput/UserInput.js';
 import Sound from '../Sound/Sound';
 
@@ -24,6 +25,8 @@ const getMessage = (msgData, platform) => ({
   image: <Image message={{...msgData, platform: platform}} />,
   carousel: <Carousel carousel={msgData.carouselData} platform={platform} />,
   sound: <Sound data={{...msgData, platform: platform}} />,
+  video: <Video data={{...msgData, platform: platform}} />,
+  // error: <Error />,
 });
 
 export default function Chatbot({conversation, platform, addMessage}) {
