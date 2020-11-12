@@ -61,8 +61,6 @@ const ButtonInner = styled.div`
     css`
       flex-grow: 0;
       font-weight: normal;
-
-
       color: magenta;
       ${'' /* margin-top: .6rem; */}
     `}
