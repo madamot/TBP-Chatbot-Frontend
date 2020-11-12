@@ -7,6 +7,7 @@ import Image from '../Image/Image';
 import Carousel from '../Carousel/Carousel';
 import Video from '../Video/Video';
 import UserInput from '../UserInput/UserInput.js';
+import Sound from '../Sound/Sound';
 
 const ChatContainer = styled.div`
   width: 25em;
@@ -16,12 +17,14 @@ const ChatContainer = styled.div`
   bottom: 15px; */}
   text-align: center;
   overflow-y: scroll;
+  background-color: ${({ platform }) => platform === 'teams' ? "#F3F2F1" : "#fff"};
 `;
 
 const getMessage = (msgData, platform) => ({
   text: <Text data={{...msgData, platform: platform}} />,
   image: <Image message={{...msgData, platform: platform}} />,
   carousel: <Carousel carousel={msgData.carouselData} platform={platform} />,
+  sound: <Sound data={{...msgData, platform: platform}} />,
   video: <Video data={{...msgData, platform: platform}} />,
   // error: <Error />,
 });
@@ -33,7 +36,7 @@ export default function Chatbot({conversation, platform, addMessage}) {
         width: "25em",
         border: "1px solid #0084ff"
       }}>
-        <ChatContainer>
+        <ChatContainer platform={platform}>
           {conversation.map(msgData => (
             <div>
               {getMessage(msgData, platform)[msgData.type]}

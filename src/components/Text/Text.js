@@ -12,7 +12,7 @@ const Message = styled.div`
   ${({ platform }) =>
     platform === 'teams' &&
     css`
-      background-color: #eee;
+      background-color: #fff;
       padding: .8rem 1.6rem .8rem 1.6rem;
     `}
   ${({ author, platform }) =>
@@ -42,6 +42,7 @@ const MainMessage = styled.div`
       overflow: hidden;
       position: relative;
       color: #252423;
+      background: #fff;
       ${'' /* margin-bottom: .6rem; */}
       min-width: 10.6rem;
     `}

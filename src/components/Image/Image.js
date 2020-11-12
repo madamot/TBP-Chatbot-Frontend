@@ -20,7 +20,7 @@ const Message = styled.div`
       overflow: hidden;
       position: relative;
       padding: 6px 12px 7px;
-      background: #eee;
+      background: #fff;
       color: #252423;
       margin-bottom: .6rem;
       min-width: 10.6rem;

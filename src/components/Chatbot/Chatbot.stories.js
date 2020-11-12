@@ -94,7 +94,14 @@ const conversation = [
     ]
   },
   {
-    id: '1',
+    id: '4',
+    type: 'sound',
+    soundSrc: require('../../audio/Nevergonnagiveyouup.mp3'),
+    date: '14-07-20',
+    author: 'bot',
+  },
+  {
+    id: '5',
     type: 'video',
     videoSrc: require('../../images/videoplayback.mp4'),
     author: 'bot',
