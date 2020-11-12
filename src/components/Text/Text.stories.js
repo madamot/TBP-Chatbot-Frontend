@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 
 import Text from './Text';
 import { Messenger_Button, Teams_Button } from '../Button/Button.stories';
-import { Multiple_Messenger_Buttons, Multiple_Teams_Buttons } from '../ButtonList/ButtonList.stories';
+// import { Multiple_Messenger_Buttons, Multiple_Teams_Buttons } from '../ButtonList/ButtonList.stories';
 // import Button from '../Button/Button';
 
 export default {

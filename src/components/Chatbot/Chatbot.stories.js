@@ -16,7 +16,6 @@ const conversation = [
     id: '1',
     type: 'text',
     title: 'Hello World!',
-    platform: 'messenger',
     author: 'bot',
     date: '14-07-20',
     updatedAt: new Date(2018, 0, 1, 9, 0),
@@ -25,7 +24,6 @@ const conversation = [
     id: '2',
     type: 'text',
     title: 'How are we?',
-    platform: 'messenger',
     author: 'bot',
     date: '14-07-20',
     updatedAt: new Date(2018, 0, 1, 9, 0),
@@ -40,7 +38,6 @@ const conversation = [
     id: '3',
     type: 'image',
     imgSrc: require('../../images/decepticons.jpg'),
-    platform: 'messenger',
     author: 'bot',
   },
   {
@@ -52,7 +49,6 @@ const conversation = [
         title: 'Title',
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
-        platform: 'messenger',
         author: 'bot',
         button: [
           {
@@ -66,7 +62,6 @@ const conversation = [
         title: 'Title',
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
-        platform: 'messenger',
         author: 'bot'
       },
       {
@@ -74,7 +69,6 @@ const conversation = [
         title: 'Title',
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
-        platform: 'messenger',
         author: 'bot',
         button: [
           {
@@ -88,7 +82,6 @@ const conversation = [
         title: 'Title',
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
-        platform: 'messenger',
         author: 'bot'
       },
     ]
@@ -98,7 +91,7 @@ const conversation = [
 
 export const Messenger_Chatbot = () => (
   <>
-    <Chatbot conversation={conversation} />
+    <Chatbot conversation={conversation} platform='messenger' />
   </>
 );
 

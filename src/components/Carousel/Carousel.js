@@ -26,6 +26,7 @@ ${({ platform }) =>
 
 const Message = styled.div`
   display: inline-block;
+  box-sizing: border-box;
   clear: both;
   margin-bottom: 2px;
   font-family: Helvetica, Arial, sans-serif;
@@ -65,6 +66,9 @@ const Message = styled.div`
 
 const Caption = styled.div`
   padding: 0px 12px 6px;
+  > span {
+    font-weight: lighter;
+  }
 
   ${({ platform }) =>
     platform === 'teams' &&
@@ -164,7 +168,7 @@ export default function Carousel({ carousel, platform, carousel: { id, title, su
                 <Picture src={carousel.imgSrc} platform={platform} />
                 <Caption id="info" platform={platform}>
                   {carousel.title}<br/>
-                  {carousel.subtitle}
+                  <span>{carousel.subtitle}</span>
                 </Caption>
               </TeamsContainer>
               {

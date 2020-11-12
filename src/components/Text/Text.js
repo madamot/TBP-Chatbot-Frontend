@@ -3,11 +3,12 @@ import styled, { css } from 'styled-components';
 
 import Button from '../Button/Button';
 
-import "../../index.css"
+// import "../../index.css"
 
 const Message = styled.div`
   ${'' /* display: flex; */}
   clear: both;
+  position: relative;
   margin: 1px 0;
   font-family: Helvetica, Arial, sans-serif;
   float: ${({ author }) => author === 'user' ? "right" : "left"};

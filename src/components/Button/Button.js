@@ -3,23 +3,23 @@ import styled, { css } from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
 import Text from '../Text/Text';
+import "../../index.css"
 
 const ButtonContainer = styled.div`
   display: flex;
   clear: both;
   margin-bottom: 0;
-    color: #0084ff;
+  color: #0084ff;
   ${'' /* border-radius: 30px; */}
-
-  border: 2px solid #eee;
+  border: 1px solid #eee;
   font-family: Helvetica, Arial, sans-serif;
-    background: #fff;
+  background: #fff;
 
 
     ${({ platform }) =>
       platform === 'messenger' &&
       css`
-      &:last-child {
+      &:last-of-type {
           border-bottom-left-radius: 20px;
           border-bottom-right-radius: 20px;
         }
