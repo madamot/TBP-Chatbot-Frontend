@@ -87,6 +87,14 @@ const conversation = [
         author: 'bot'
       },
     ]
+  },
+  {
+    id: '1',
+    type: 'video',
+    videoSrc: require('../../images/videoplayback.mp4'),
+    author: 'bot',
+    platform: 'messenger',
+    date: '14-07-20',
   }
 ];
 
