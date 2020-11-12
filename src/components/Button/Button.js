@@ -39,7 +39,7 @@ const ButtonContainer = styled.div`
       margin: 5px 0px;
       border-radius: 3px;
       border: 1px solid magenta;
-      background-color: #eee;
+      background-color: #fff;
       display: inline-block;
       ${'' /* min-width: 10.6rem; */}
     `}
