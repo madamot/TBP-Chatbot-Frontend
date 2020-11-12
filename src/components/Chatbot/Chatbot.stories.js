@@ -39,6 +39,7 @@ const conversation = [
     type: 'image',
     imgSrc: require('../../images/decepticons.jpg'),
     author: 'bot',
+    date: '14-07-20',
   },
   {
     id: '1',
@@ -50,6 +51,7 @@ const conversation = [
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
         author: 'bot',
+        date: '14-07-20',
         button: [
           {
             id: '1',
@@ -62,7 +64,8 @@ const conversation = [
         title: 'Title',
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
-        author: 'bot'
+        author: 'bot',
+        date: '14-07-20',
       },
       {
         id: '3',
@@ -70,6 +73,7 @@ const conversation = [
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
         author: 'bot',
+        date: '14-07-20',
         button: [
           {
             id: '1',
@@ -82,7 +86,8 @@ const conversation = [
         title: 'Title',
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
-        author: 'bot'
+        author: 'bot',
+        date: '14-07-20',
       },
     ]
   }

@@ -17,6 +17,7 @@ export const singleCarouselData = [
     subtitle: 'Subtitle',
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'messenger',
+    date: '14-07-20',
     author: 'bot'
   },
 ];
@@ -28,6 +29,7 @@ export const singleCarouselWithButtonData = [
     subtitle: 'Subtitle',
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'messenger',
+    date: '14-07-20',
     author: 'bot',
     button: [
       {
@@ -80,6 +82,7 @@ export const carouselData = [
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'messenger',
     author: 'bot',
+    date: '14-07-20',
     button: [
       {
         id: '1',
@@ -93,6 +96,7 @@ export const carouselData = [
     subtitle: 'Subtitle',
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'messenger',
+    date: '14-07-20',
     author: 'bot'
   },
   {
@@ -101,6 +105,7 @@ export const carouselData = [
     subtitle: 'Subtitle',
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'messenger',
+    date: '14-07-20',
     author: 'bot',
     button: [
       {
@@ -115,6 +120,7 @@ export const carouselData = [
     subtitle: 'Subtitle',
     imgSrc: require('../../images/decepticons.jpg'),
     platform: 'messenger',
+    date: '14-07-20',
     author: 'bot'
   },
 ];
