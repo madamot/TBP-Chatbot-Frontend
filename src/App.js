@@ -12,12 +12,13 @@ function App() {
  const id = 'user001'
 
   useEffect(() => {
+    let isMounted = true;
     const fetchData = async () => {
       await axios(
         `http://localhost:5000/api/chat/${id}`,
       )
       .then(result => {
-      setConvo(result.data);
+      if (isMounted) setConvo(result.data);
     })
     .catch(error => {
       setConvo([
@@ -37,6 +38,7 @@ function App() {
     };
 
     fetchData();
+    return () => { isMounted = false };
   }, []);
 
   const send = (text, newConvo) => {
