@@ -1,7 +1,11 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import axios from 'axios';
+import { render, screen, act } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import App from '../App';
+
+// jest.mock('axios');
 
 describe('App', () => {
   test('renders chatbot component', () => {
@@ -9,7 +13,7 @@ describe('App', () => {
 
     expect(screen.queryAllByText("Chatbot")).toBeTruthy()
   });
-  
+
   test('renders existing messages', async () => {
     render(<App />);
 
@@ -20,23 +24,18 @@ describe('App', () => {
     expect(await helloWorld).toHaveLength(2)
   });
 
-
-  // test('fetches stories from an API and displays them', async () => {
-  //   const stories = [
-  //     { objectID: '1', title: 'Hello' },
-  //     { objectID: '2', title: 'React' },
-  //   ];
+  // test('fetches messages from an API and fails', async () => {
   //
   //   axios.get.mockImplementationOnce(() =>
-  //     Promise.resolve({ data: { hits: stories } })
+  //     Promise.reject(new Error())
   //   );
   //
   //   render(<App />);
   //
-  //   await userEvent.click(screen.getByRole('button'));
+  //   // await act(() => promise);
   //
-  //   const items = await screen.findAllByRole('listitem');
+  //   const message = await screen.findByText(/Something went wrong/);
   //
-  //   expect(items).toHaveLength(2);
+  //   expect(message).toBeInTheDocument();
   // });
 })

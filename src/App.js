@@ -11,34 +11,34 @@ function App() {
 
  const id = 'user001'
 
-  useEffect(() => {
-    let isMounted = true;
-    const fetchData = async () => {
-      await axios(
-        `http://localhost:5000/api/chat/${id}`,
-      )
-      .then(result => {
-      if (isMounted) setConvo(result.data);
-    })
-    .catch(error => {
-      setConvo([
-        {
-          id: '1',
-          type: 'text',
-          title: 'Something went wrong!',
-          platform: 'messenger',
-          author: 'bot',
-          date: '14-07-20',
-          updatedAt: new Date(2018, 0, 1, 9, 0),
-        }
-      ]);
-    });
+   useEffect(() => {
+   let isMounted = true;
+   const fetchData = async () => {
+     await axios(
+       `http://localhost:5000/api/chat/${id}`,
+     )
+     .then(result => {
+     if (isMounted) setConvo(result.data);
+   })
+   .catch(error => {
+     setConvo([
+       {
+         id: '1',
+         type: 'text',
+         title: 'Something went wrong!',
+         platform: 'messenger',
+         author: 'bot',
+         date: '14-07-20',
+         updatedAt: new Date(2018, 0, 1, 9, 0),
+       }
+     ]);
+   });
 
 
-    };
+   };
 
-    fetchData();
-    return () => { isMounted = false };
+   fetchData();
+   return () => { isMounted = false };
   }, []);
 
   const send = (text, newConvo) => {

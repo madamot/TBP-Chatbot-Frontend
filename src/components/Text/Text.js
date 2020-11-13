@@ -83,7 +83,7 @@ export default function Text({ button: Button, className, data: { title, platfor
           <Meta platform={platform}>
             {author} {date}
           </Meta>
-          <p>{title}</p>
+          {title}
         </MainMessage>
         {
           (Button) ?
