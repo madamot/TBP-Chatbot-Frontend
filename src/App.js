@@ -13,11 +13,27 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
+      await axios(
         `http://localhost:5000/api/chat/${id}`,
-      );
-
+      )
+      .then(result => {
       setConvo(result.data);
+    })
+    .catch(error => {
+      setConvo([
+        {
+          id: '1',
+          type: 'text',
+          title: 'Something went wrong!',
+          platform: 'messenger',
+          author: 'bot',
+          date: '14-07-20',
+          updatedAt: new Date(2018, 0, 1, 9, 0),
+        }
+      ]);
+    });
+
+
     };
 
     fetchData();
