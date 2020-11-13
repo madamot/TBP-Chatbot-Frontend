@@ -57,6 +57,8 @@ export default function QuickReply({ QuickRepliesData, platform, addMessage, Qui
     return (
       <div style={{
         position: 'absolute',
+        marginTop: '-40px',
+        marginLeft: '40px'
       }}>
         <QuickReplyContainer>
 
