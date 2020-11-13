@@ -50,12 +50,12 @@ export const QuickRepliesTeamsData = [
 
 export const Messenger_Quickreply = () => (
   <>
-    <QuickReply QuickRepliesData={QuickRepliesData} />
+    <QuickReply platform='messenger' QuickRepliesData={QuickRepliesData} />
   </>
 );
 
 export const Teams_Quickreply = () => (
   <>
-    <QuickReply QuickRepliesData={QuickRepliesTeamsData} />
+    <QuickReply platform='teams' QuickRepliesData={QuickRepliesTeamsData} />
   </>
 );

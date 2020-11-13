@@ -10,6 +10,20 @@ export default {
   excludeStories: /.*Data$/,
 };
 
+export const QuickRepliesData = [
+  {
+    id: '1',
+    title: 'Reply 1',
+  },
+  {
+    id: '2',
+    title: 'Reply 2',
+  },
+  {
+    id: '3',
+    title: 'Reply 3',
+  },
+]
 
 const conversation = [
   {
@@ -113,12 +127,12 @@ const conversation = [
 
 export const Messenger_Chatbot = () => (
   <>
-    <Chatbot conversation={conversation} platform='messenger' />
+    <Chatbot conversation={conversation} platform='messenger' QuickRepliesData={QuickRepliesData} />
   </>
 );
 
 export const Teams_Chatbot = () => (
   <>
-    <Chatbot conversation={conversation} platform='teams' />
+    <Chatbot conversation={conversation} platform='teams' QuickRepliesData={QuickRepliesData} />
   </>
 );

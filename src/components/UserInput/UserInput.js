@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
-// import Send from "../Send/Send.js";
+import QuickReply from "../QuickReply/QuickReply.js";
 
 const Input = styled.input.attrs(props => ({
   type: 'text',
@@ -43,7 +43,7 @@ const Submit = styled.button`
 `
 
 const Form = styled.form`
-  background: #F5F2F1;;
+  background: #F5F2F1;
   padding: 10px;
   display: flex;
   flex-direction: row;
@@ -57,7 +57,7 @@ const Form = styled.form`
 `;
 
 
-export default function UserInput({platform, addMessage}) {
+export default function UserInput({platform, addMessage, QuickRepliesData}) {
   const [message, setMessage] = useState('');
 
   const handleSubmit = e => {
@@ -68,11 +68,14 @@ export default function UserInput({platform, addMessage}) {
   }
 
     return (
-      <Form platform={platform} onSubmit={handleSubmit}>
-        <Input type="title" name="name" platform={platform} value={message} onChange={e => setMessage(e.target.value)} />
-        <Submit type="submit" value="Submit" platform={platform}>
-          <FontAwesomeIcon icon={faPaperPlane} value="Submit" />
-        </Submit>
-      </Form>
+      <>
+        <QuickReply platform={platform} QuickRepliesData={QuickRepliesData} addMessage={addMessage} />
+        <Form platform={platform} onSubmit={handleSubmit}>
+          <Input type="title" name="name" platform={platform} value={message} onChange={e => setMessage(e.target.value)} />
+          <Submit type="submit" value="Submit" platform={platform}>
+            <FontAwesomeIcon icon={faPaperPlane} value="Submit" />
+          </Submit>
+        </Form>
+      </>
     );
 }

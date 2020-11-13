@@ -6,6 +6,21 @@ import UserInput from '../UserInput/UserInput.js';
 
 // import * as ChatbotStories from './Chatbot.stories';
 
+export const QuickRepliesData = [
+  {
+    id: '1',
+    title: 'Reply 1',
+  },
+  {
+    id: '2',
+    title: 'Reply 2',
+  },
+  {
+    id: '3',
+    title: 'Reply 3',
+  },
+]
+
 const conversation = [
   {
     id: '1',
@@ -108,6 +123,6 @@ export default {
 
 export const Chatbots = () => (
   <>
-    <ChatbotViews conversation={conversation} />
+    <ChatbotViews conversation={conversation} QuickRepliesData={QuickRepliesData} />
   </>
 );
