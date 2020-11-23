@@ -12,7 +12,7 @@ const Message = styled.div`
   ${({ platform }) =>
     platform === 'teams' &&
     css`
-      background-color: #eee;
+      background-color: #fff;
       padding: .8rem 1.6rem .8rem 1.6rem;
     `}
   ${({ author, platform }) =>
@@ -42,6 +42,7 @@ const MainMessage = styled.div`
       overflow: hidden;
       position: relative;
       color: #252423;
+      background: #fff;
       ${'' /* margin-bottom: .6rem; */}
       min-width: 10.6rem;
     `}
@@ -50,7 +51,7 @@ const MainMessage = styled.div`
     author === 'user' &&
     css`
       float: right;
-      ${'' /* background: ${({ platform }) => platform === 'teams' ? "#e5e5f1" : "#0084ff"}; */}
+      background: ${({ platform }) => platform === 'teams' ? "#e5e5f1" : "#0084ff"};
       ${({ platform }) =>
         platform === 'teams' &&
         css`

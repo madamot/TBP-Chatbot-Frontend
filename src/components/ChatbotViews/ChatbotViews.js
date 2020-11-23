@@ -9,7 +9,7 @@ export default function ChatbotViews({conversation, addMessage}) {
 
     return (
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <Chatbot conversation={conversation} addMessage={addMessage} />
+        <Chatbot conversation={conversation} platform='messenger' addMessage={addMessage} />
         <Chatbot conversation={conversation} platform='teams' addMessage={addMessage} />
       </div>
       );

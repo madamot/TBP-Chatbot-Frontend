@@ -8,14 +8,16 @@ import './App.css';
 
 function App() {
   const [convo, setConvo] = useState([]);
+  const [user, changeUser] = useState('');
 
- const id = 'user001'
+ // const id = user
+
 
    useEffect(() => {
    let isMounted = true;
    const fetchData = async () => {
      await axios(
-       `http://localhost:5000/api/chat/${id}`,
+       `http://localhost:5000/api/chat/${user}`,
      )
      .then(result => {
      if (isMounted) setConvo(result.data);
@@ -35,14 +37,17 @@ function App() {
    });
 
 
+
+
    };
 
    fetchData();
    return () => { isMounted = false };
-  }, []);
+  }, [user]);
+
 
   const send = (text, newConvo) => {
-    axios.post(`http://localhost:5000/api/chat/${id}`, {
+    axios.post(`http://localhost:5000/api/chat/${user}`, {
     title: text,
   })
   .then(function (response) {
@@ -73,6 +78,22 @@ function App() {
 
   return (
     <div className="App">
+      <label>
+        <input type="radio"
+          value='user001'
+          checked={user === 'user001'}
+          onClick={() => changeUser('user001')}
+        />
+        user001
+      </label>
+      <label>
+        <input type="radio" name="address"
+          value='user002'
+          checked={user === 'user002'}
+          onClick={() => changeUser('user002')}
+        />
+        user002
+      </label>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <ChatbotViews addMessage={addMessage} conversation={convo} />
       </div>

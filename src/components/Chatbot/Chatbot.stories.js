@@ -92,13 +92,28 @@ const conversation = [
         author: 'bot'
       },
     ]
+  },
+  {
+    id: '4',
+    type: 'sound',
+    soundSrc: require('../../audio/Nevergonnagiveyouup.mp3'),
+    date: '14-07-20',
+    author: 'bot',
+  },
+  {
+    id: '5',
+    type: 'video',
+    videoSrc: require('../../images/videoplayback.mp4'),
+    author: 'bot',
+    platform: 'messenger',
+    date: '14-07-20',
   }
 ];
 
 
 export const Messenger_Chatbot = () => (
   <>
-    <Chatbot conversation={conversation} />
+    <Chatbot conversation={conversation} platform='messenger' />
   </>
 );
 
