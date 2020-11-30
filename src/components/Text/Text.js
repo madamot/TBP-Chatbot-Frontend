@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+import QuickReply from '../QuickReply/QuickReply';
+
 import "../../index.css"
 
 const Message = styled.div`
@@ -77,7 +79,7 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
-export default function Text({ button: Button, className, data: { title, platform, author, date, user }}) {
+export default function Text({ button: Button, className, data: { title, platform, author, date, user, quickreplies }}) {
   return (
       <Message author={author} platform={platform}>
         <MainMessage className={className} button={Button} platform={platform} author={author}>
@@ -89,15 +91,14 @@ export default function Text({ button: Button, className, data: { title, platfor
         {
           (Button) ?
             <Button platform={platform} />
-            // <p>{platform}</p>
           : null
         }
-        {/* {
-          (ButtonList) ?
-            <ButtonList platform={platform} />
-            <p>{platform}</p>
+        {
+          (quickreplies) ?
+            <QuickReply platform={platform} quickreplies={quickreplies} />
           : null
-        } */}
+        }
+
       </Message>
   );
 }

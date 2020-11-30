@@ -56,6 +56,12 @@ export const Messenger_Text_With_Buttons = () => (
   </>
 );
 
+export const Messenger_Text_With_QuickReply = () => (
+  <>
+    <Text data={{ ...messageData, author: messageData.author.BOT,  quickreplies: [{id: '1', title: 'Reply 1'}, {id: '2', title: 'Reply 2'}]}} />
+  </>
+);
+
 export const Teams_Bot_Text = () => (
   <>
     <Text data={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} />

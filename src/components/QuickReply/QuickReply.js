@@ -52,7 +52,7 @@ const Reply = styled.div`
 `;
 
 
-export default function QuickReply({ QuickRepliesData, platform, addMessage, QuickRepliesData: { id, title }}) {
+export default function QuickReply({ quickreplies, platform, addMessage, quickreplies: { id, title }}) {
 
     return (
       <div style={{
@@ -62,7 +62,7 @@ export default function QuickReply({ QuickRepliesData, platform, addMessage, Qui
       }}>
         <QuickReplyContainer>
 
-          {QuickRepliesData.map(reply => (
+          {quickreplies.map(reply => (
             <Reply key={reply.id} platform={platform} onClick={() => addMessage(reply.title)}>{reply.title}</Reply>
 
 

@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
-import QuickReply from "../QuickReply/QuickReply.js";
 
 const Input = styled.input.attrs(props => ({
   type: 'text',
@@ -69,7 +68,6 @@ export default function UserInput({platform, addMessage, QuickRepliesData}) {
 
     return (
       <>
-        <QuickReply platform={platform} QuickRepliesData={QuickRepliesData} addMessage={addMessage} />
         <Form platform={platform} onSubmit={handleSubmit}>
           <Input type="title" name="name" platform={platform} value={message} onChange={e => setMessage(e.target.value)} />
           <Submit type="submit" value="Submit" platform={platform}>
