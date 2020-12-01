@@ -7,15 +7,15 @@ import "../../index.css"
 
 const Message = styled.div`
   ${'' /* display: flex; */}
+  position: relative;
   clear: both;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
   font-family: Helvetica, Arial, sans-serif;
   float: ${({ author }) => author === 'user' ? "right" : "left"};
-  ${({ platform }) =>
+  ${({ platform, quickreplies }) =>
     platform === 'teams' &&
     css`
-      background-color: #fff;
-      padding: .8rem 1.6rem .8rem 1.6rem;
+      ${'' /* background-color: #fff; */}
     `}
   ${({ author, platform }) =>
     author === 'user' && platform === 'teams' &&
@@ -27,11 +27,13 @@ const Message = styled.div`
 
 const MainMessage = styled.div`
   padding: 6px 12px 7px;
+  display: inline-block;
   font-size: 14px;
   max-width: 95%;
   margin: 1px 0;
   border-radius: 30px;
   background: #eee;
+  float: left;
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
 
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
@@ -39,8 +41,8 @@ const MainMessage = styled.div`
   ${({ platform }) =>
     platform === 'teams' &&
     css`
+      padding: .8rem 1.6rem .8rem 1.6rem;
       border-radius: 3px;
-      padding: 0;
       overflow: hidden;
       position: relative;
       color: #252423;
@@ -81,7 +83,7 @@ const Meta = styled.div`
 
 export default function Text({ button: Button, className, addMessage, data: { title, platform, author, date, user, quickreplies }}) {
   return (
-      <Message author={author} platform={platform}>
+      <Message author={author} platform={platform} quickreplies={quickreplies}>
         <MainMessage className={className} button={Button} platform={platform} author={author}>
           <Meta platform={platform}>
             {author} {date}

@@ -5,8 +5,11 @@ import { action } from '@storybook/addon-actions';
 
 const QuickReplyContainer = styled.div`
   display: flex;
+  clear: both;
   flex-direction: row;
-  justify-content: center;
+  ${'' /* justify-content: center; */}
+  overflow: hidden;
+  position: relative;
   ${'' /* clear: both; */}
   ${'' /* margin-bottom: 2px; */}
   font-family: Helvetica, Arial, sans-serif;
