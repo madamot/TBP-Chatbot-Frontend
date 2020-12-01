@@ -83,3 +83,9 @@ export const Teams_Text_With_Buttons = () => (
     <Text data={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} button={Multiple_Teams_Buttons} />
   </>
 );
+
+export const Teams_Text_With_QuickReply = () => (
+  <>
+    <Text data={{ ...messageData, platform: 'teams', author: messageData.author.BOT,  quickreplies: [{id: '1', title: 'Reply 1'}, {id: '2', title: 'Reply 2'}]}} />
+  </>
+);

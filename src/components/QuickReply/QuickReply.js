@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
@@ -24,6 +24,10 @@ const QuickReplyContainer = styled.div`
       margin-bottom: 0;
     ${'' /* min-width: 10.6rem;/ */}
     `}
+
+    ${props => props.quickReplied == true && css`
+        display: none;
+    `};
 `;
 
 const Reply = styled.div`
@@ -53,20 +57,21 @@ const Reply = styled.div`
 
 
 export default function QuickReply({ quickreplies, platform, addMessage, quickreplies: { id, title }}) {
+    const [quickReplied, setquickReplied] = useState(false);
+
+  const quickRepSend = (reply) => {
+
+    setquickReplied(true)
+    addMessage(reply.title)
+  }
 
     return (
       <div style={{
-        position: 'absolute',
-        marginTop: '-40px',
-        marginLeft: '40px'
+        // position: 'absolute',
       }}>
-        <QuickReplyContainer>
-
+        <QuickReplyContainer quickReplied={quickReplied}>
           {quickreplies.map(reply => (
-            <Reply key={reply.id} platform={platform} onClick={() => addMessage(reply.title)}>{reply.title}</Reply>
-
-
-
+            <Reply key={reply.id} platform={platform} onClick={() => quickRepSend(reply)}>{reply.title}</Reply>
             ))}
           </QuickReplyContainer>
       </div>

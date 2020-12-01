@@ -20,8 +20,8 @@ const ChatContainer = styled.div`
   background-color: ${({ platform }) => platform === 'teams' ? "#F3F2F1" : "#fff"};
 `;
 
-const getMessage = (msgData, platform) => ({
-  text: <Text data={{...msgData, platform: platform}} />,
+const getMessage = (msgData, platform, addMessage) => ({
+  text: <Text data={{...msgData, platform: platform}} addMessage={addMessage} />,
   image: <Image message={{...msgData, platform: platform}} />,
   carousel: <Carousel carousel={msgData.carouselData} platform={platform} />,
   sound: <Sound data={{...msgData, platform: platform}} />,
@@ -39,7 +39,7 @@ export default function Chatbot({conversation, platform, addMessage, QuickReplie
         <ChatContainer platform={platform}>
           {conversation.map(msgData => (
             <div>
-              {getMessage(msgData, platform)[msgData.type]}
+              {getMessage(msgData, platform, addMessage)[msgData.type]}
             </div>
           ))}
         </ChatContainer>

@@ -79,7 +79,7 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
-export default function Text({ button: Button, className, data: { title, platform, author, date, user, quickreplies }}) {
+export default function Text({ button: Button, className, addMessage, data: { title, platform, author, date, user, quickreplies }}) {
   return (
       <Message author={author} platform={platform}>
         <MainMessage className={className} button={Button} platform={platform} author={author}>
@@ -95,7 +95,7 @@ export default function Text({ button: Button, className, data: { title, platfor
         }
         {
           (quickreplies) ?
-            <QuickReply platform={platform} quickreplies={quickreplies} />
+            <QuickReply platform={platform} quickreplies={quickreplies} addMessage={addMessage} />
           : null
         }
 
