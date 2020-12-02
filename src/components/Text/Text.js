@@ -1,7 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import "../../index.css"
+import Button from '../Button/Button';
+
+// import "../../index.css"
 
 const Message = styled.div`
   ${'' /* display: flex; */}
@@ -24,12 +26,11 @@ const MainMessage = styled.div`
   font-size: 14px;
   max-width: 95%;
   margin: 1px 0;
-  border-radius: 30px;
+  border-radius: 20px;
   background: #eee;
   float: left;
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
-
-  border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
+  border-bottom-right-radius: ${({ button }) => button ? "5px" : null};
 
   ${({ platform }) =>
     platform === 'teams' &&
@@ -74,18 +75,18 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
-export default function Text({ button: Button, className, data: { title, platform, author, date, user }}) {
+export default function Text({ data: { title, platform, author, date, user, button }}) {
   return (
       <Message author={author} platform={platform}>
-        <MainMessage className={className} button={Button} platform={platform} author={author}>
+        <MainMessage button={button} platform={platform} author={author}>
           <Meta platform={platform}>
             {author} {date}
           </Meta>
           {title}
         </MainMessage>
         {
-          (Button) ?
-            <Button platform={platform} />
+          (button) ?
+            <Button key={button.id} platform={platform} buttons={button} />
           : null
         }
       </Message>
