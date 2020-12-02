@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import ButtonList from '../ButtonList/ButtonList';
+import Button from '../Button/Button';
 
 const Container = styled.div`
   display: flex;
@@ -26,6 +26,7 @@ ${({ platform }) =>
 
 const Message = styled.div`
   display: inline-block;
+  box-sizing: border-box;
   clear: both;
   margin-bottom: 2px;
   font-family: Helvetica, Arial, sans-serif;
@@ -51,7 +52,6 @@ const Message = styled.div`
       background: #fff;
       color: #252423;
       margin-bottom: .6rem;
-      min-width: 10.6rem;
     `}
 
   ${({ author, platform }) =>
@@ -65,6 +65,9 @@ const Message = styled.div`
 
 const Caption = styled.div`
   padding: 0px 12px 6px;
+  > span {
+    font-weight: lighter;
+  }
 
   ${({ platform }) =>
     platform === 'teams' &&
@@ -163,13 +166,13 @@ export default function Carousel({ carousel, platform, carousel: { id, title, su
               <TeamsContainer platform={platform}>
                 <Picture src={carousel.imgSrc} platform={platform} />
                 <Caption id="info" platform={platform}>
-                  <p>{carousel.title}</p>
-                  <p>{carousel.subtitle}</p>
+                  {carousel.title}<br/>
+                  <span>{carousel.subtitle}</span>
                 </Caption>
               </TeamsContainer>
               {
                 (carousel.button) ?
-                  <ButtonList key={carousel.button.id} platform={platform} buttons={carousel.button} />
+                  <Button key={carousel.button.id} platform={platform} buttons={carousel.button} />
                 : null
               }
             </Message>
