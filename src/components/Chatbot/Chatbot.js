@@ -22,10 +22,10 @@ const ChatContainer = styled.div`
 
 const getMessage = (msgData, platform, addMessage) => ({
   text: <Text data={{...msgData, platform: platform}} addMessage={addMessage} />,
-  image: <Image message={{...msgData, platform: platform}} />,
-  carousel: <Carousel carousel={msgData.carouselData} platform={platform} />,
-  sound: <Sound data={{...msgData, platform: platform}} />,
-  video: <Video data={{...msgData, platform: platform}} />,
+  image: <Image message={{...msgData, platform: platform}} addMessage={addMessage} />,
+  carousel: <Carousel data={msgData.carouselData} platform={platform} addMessage={addMessage} />,
+  sound: <Sound data={{...msgData, platform: platform}} addMessage={addMessage} />,
+  video: <Video data={{...msgData, platform: platform}} addMessage={addMessage} />,
   // error: <Error />,
 });
 

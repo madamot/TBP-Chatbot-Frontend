@@ -113,7 +113,7 @@ const Right = styled.button`
 `;
 
 
-export default function Carousel({ carousel, platform, carousel: { id, title, subtitle, imgSrc, date, author, button }}) {
+export default function Carousel({ data, platform, addMessage, data: { id, title, subtitle, imgSrc, date, author, button }}) {
 
   const left = () => {
      scrollLeft(document.getElementById('content'), -300, 1000);
@@ -155,7 +155,7 @@ export default function Carousel({ carousel, platform, carousel: { id, title, su
     return (
       <>
         <Container id="content">
-          {carousel.map(carousel => (
+          {data.map(carousel => (
             <Message author={carousel.author} platform={platform}>
               <Meta platform={platform}>
                 {carousel.author} {carousel.date}
