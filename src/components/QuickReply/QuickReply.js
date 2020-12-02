@@ -73,7 +73,7 @@ export default function QuickReply({ quickreplies, platform, addMessage, quickre
         // position: 'absolute',
       }}>
         <QuickReplyContainer quickReplied={quickReplied}>
-          {quickreplies.map(reply => (
+          {quickreplies.quickreplyData.map(reply => (
             <Reply key={reply.id} platform={platform} onClick={() => quickRepSend(reply)}>{reply.title}</Reply>
             ))}
           </QuickReplyContainer>

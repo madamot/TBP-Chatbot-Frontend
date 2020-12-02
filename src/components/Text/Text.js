@@ -1,8 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import QuickReply from '../QuickReply/QuickReply';
-
 import "../../index.css"
 
 const Message = styled.div`
@@ -12,11 +10,6 @@ const Message = styled.div`
   margin-bottom: 5px;
   font-family: Helvetica, Arial, sans-serif;
   float: ${({ author }) => author === 'user' ? "right" : "left"};
-  ${({ platform, quickreplies }) =>
-    platform === 'teams' &&
-    css`
-      ${'' /* background-color: #fff; */}
-    `}
   ${({ author, platform }) =>
     author === 'user' && platform === 'teams' &&
     css`
@@ -81,9 +74,9 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
-export default function Text({ button: Button, className, addMessage, data: { title, platform, author, date, user, quickreplies }}) {
+export default function Text({ button: Button, className, data: { title, platform, author, date, user }}) {
   return (
-      <Message author={author} platform={platform} quickreplies={quickreplies}>
+      <Message author={author} platform={platform}>
         <MainMessage className={className} button={Button} platform={platform} author={author}>
           <Meta platform={platform}>
             {author} {date}
@@ -95,12 +88,6 @@ export default function Text({ button: Button, className, addMessage, data: { ti
             <Button platform={platform} />
           : null
         }
-        {
-          (quickreplies) ?
-            <QuickReply platform={platform} quickreplies={quickreplies} addMessage={addMessage} />
-          : null
-        }
-
       </Message>
   );
 }

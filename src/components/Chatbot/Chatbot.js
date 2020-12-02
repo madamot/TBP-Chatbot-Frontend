@@ -8,6 +8,7 @@ import Carousel from '../Carousel/Carousel';
 import Video from '../Video/Video';
 import UserInput from '../UserInput/UserInput.js';
 import Sound from '../Sound/Sound';
+import QuickReply from '../QuickReply/QuickReply';
 
 const ChatContainer = styled.div`
   width: 25em;
@@ -21,11 +22,12 @@ const ChatContainer = styled.div`
 `;
 
 const getMessage = (msgData, platform, addMessage) => ({
-  text: <Text data={{...msgData, platform: platform}} addMessage={addMessage} />,
-  image: <Image message={{...msgData, platform: platform}} addMessage={addMessage} />,
-  carousel: <Carousel data={msgData.carouselData} platform={platform} addMessage={addMessage} />,
-  sound: <Sound data={{...msgData, platform: platform}} addMessage={addMessage} />,
-  video: <Video data={{...msgData, platform: platform}} addMessage={addMessage} />,
+  text: <Text data={{...msgData, platform: platform}} />,
+  image: <Image message={{...msgData, platform: platform}} />,
+  carousel: <Carousel data={msgData.carouselData} platform={platform} />,
+  quickreply: <QuickReply platform={platform} quickreplies={msgData} addMessage={addMessage} />,
+  sound: <Sound data={{...msgData, platform: platform}} />,
+  video: <Video data={{...msgData, platform: platform}} />,
   // error: <Error />,
 });
 

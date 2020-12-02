@@ -121,18 +121,36 @@ const conversation = [
     author: 'bot',
     platform: 'messenger',
     date: '14-07-20',
+  },
+  {
+    id: '1',
+    type: 'quickreply',
+    quickreplyData: [
+      {
+      id: '1',
+      title: 'Reply 1',
+      },
+      {
+        id: '2',
+        title: 'Reply 2',
+      },
+      {
+        id: '3',
+        title: 'Reply 3',
+      },
+    ]
   }
 ];
 
 
 export const Messenger_Chatbot = () => (
   <>
-    <Chatbot conversation={conversation} platform='messenger' QuickRepliesData={QuickRepliesData} />
+    <Chatbot conversation={conversation} platform='messenger' />
   </>
 );
 
 export const Teams_Chatbot = () => (
   <>
-    <Chatbot conversation={conversation} platform='teams' QuickRepliesData={QuickRepliesData} />
+    <Chatbot conversation={conversation} platform='teams' />
   </>
 );
