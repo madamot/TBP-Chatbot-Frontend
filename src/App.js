@@ -6,21 +6,6 @@ import UserInput from './components/UserInput/UserInput.js';
 
 import './App.css';
 
-export const QuickRepliesData = [
-  {
-    id: '1',
-    title: 'Reply 1',
-  },
-  {
-    id: '2',
-    title: 'Reply 2',
-  },
-  {
-    id: '3',
-    title: 'Reply 3',
-  },
-]
-
 function App() {
   const [convo, setConvo] = useState([]);
   const [user, changeUser] = useState('');
@@ -88,7 +73,7 @@ function App() {
         user002
       </label>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <ChatbotViews addMessage={addMessage} conversation={convo} QuickRepliesData={QuickRepliesData} />
+        <ChatbotViews addMessage={addMessage} conversation={convo} />
         {convo.map(msg => (
           console.log(msg)
         ))}

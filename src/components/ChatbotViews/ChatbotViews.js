@@ -5,12 +5,12 @@ import { action } from '@storybook/addon-actions';
 import Chatbot from '../Chatbot/Chatbot';
 
 
-export default function ChatbotViews({conversation, addMessage, QuickRepliesData}) {
+export default function ChatbotViews({conversation, addMessage}) {
 
     return (
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <Chatbot conversation={conversation} platform='messenger' addMessage={addMessage} QuickRepliesData={QuickRepliesData} />
-        <Chatbot conversation={conversation} platform='teams' addMessage={addMessage} QuickRepliesData={QuickRepliesData} />
+        <Chatbot conversation={conversation} platform='messenger' addMessage={addMessage} />
+        <Chatbot conversation={conversation} platform='teams' addMessage={addMessage} />
       </div>
       );
 }
