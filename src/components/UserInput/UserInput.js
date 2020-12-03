@@ -56,7 +56,7 @@ const Form = styled.form`
 `;
 
 
-export default function UserInput({platform, addMessage}) {
+export default function UserInput({platform, addMessage, setquickReplied}) {
   const [message, setMessage] = useState('');
 
   const handleSubmit = e => {
@@ -64,6 +64,7 @@ export default function UserInput({platform, addMessage}) {
     if (!message) return;
     addMessage(message);
     setMessage('');
+    setquickReplied(true);
   }
 
     return (

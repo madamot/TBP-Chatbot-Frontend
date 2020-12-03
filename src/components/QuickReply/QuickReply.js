@@ -59,14 +59,15 @@ const Reply = styled.div`
 `;
 
 
-export default function QuickReply({ quickreplies, platform, addMessage, quickreplies: { id, title }}) {
-    const [quickReplied, setquickReplied] = useState(false);
+export default function QuickReply({ quickReplied, setquickReplied, quickreplies, platform, addMessage, quickreplies: { id, title }}) {
 
-  const quickRepSend = (reply) => {
+  // const [quickReplied, setquickReplied] = useState(false);
 
-    setquickReplied(true)
-    addMessage(reply.title)
-  }
+    const quickRepSend = (reply) => {
+
+      setquickReplied(true)
+      addMessage(reply.title)
+    }
 
     return (
       <div style={{
