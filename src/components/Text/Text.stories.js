@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 
 import Text from './Text';
 import { Messenger_Button, Teams_Button } from '../Button/Button.stories';
-import { Multiple_Messenger_Buttons, Multiple_Teams_Buttons } from '../ButtonList/ButtonList.stories';
+// import { Multiple_Messenger_Buttons, Multiple_Teams_Buttons } from '../ButtonList/ButtonList.stories';
 // import Button from '../Button/Button';
 
 export default {
@@ -46,13 +46,13 @@ export const Workplace_User_Text = () => (
 
 export const Messenger_Text_With_Button = () => (
   <>
-    <Text data={{ ...messageData, author: messageData.author.BOT }} button={Messenger_Button} />
+    <Text data={{ ...messageData, author: messageData.author.BOT, button: [{id: '1', title: 'my button'},] }} />
   </>
 );
 
 export const Messenger_Text_With_Buttons = () => (
   <>
-    <Text data={{ ...messageData, author: messageData.author.BOT }} button={Multiple_Messenger_Buttons} />
+    <Text data={{ ...messageData, author: messageData.author.BOT, button: [{id: '1', title: 'my button'}, {id: '2', title: 'button 2'}] }} />
   </>
 );
 
@@ -68,13 +68,13 @@ export const Teams_User_Text = () => (
 
 export const Teams_Text_With_Button = () => (
   <>
-    <Text data={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} button={Messenger_Button} />
+    <Text data={{ ...messageData, platform: 'teams', author: messageData.author.BOT, button: [{id: '1', title: 'my button'},] }} />
   </>
 );
 
 export const Teams_Text_With_Buttons = () => (
   <>
-    <Text data={{ ...messageData, platform: 'teams', author: messageData.author.BOT }} button={Multiple_Teams_Buttons} />
+    <Text data={{ ...messageData, platform: 'teams', author: messageData.author.BOT, button: [{id: '1', title: 'my button'}, {id: '2', title: 'button 2'}] }} />
   </>
 );
 

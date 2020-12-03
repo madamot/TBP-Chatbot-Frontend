@@ -30,7 +30,6 @@ const conversation = [
     id: '1',
     type: 'text',
     title: 'Hello World!',
-    platform: 'messenger',
     author: 'bot',
     date: '14-07-20',
     updatedAt: new Date(2018, 0, 1, 9, 0),
@@ -39,7 +38,6 @@ const conversation = [
     id: '2',
     type: 'text',
     title: 'How are we?',
-    platform: 'messenger',
     author: 'bot',
     date: '14-07-20',
     updatedAt: new Date(2018, 0, 1, 9, 0),
@@ -54,8 +52,8 @@ const conversation = [
     id: '3',
     type: 'image',
     imgSrc: require('../../images/decepticons.jpg'),
-    platform: 'messenger',
     author: 'bot',
+    date: '14-07-20',
   },
   {
     id: '1',
@@ -66,8 +64,8 @@ const conversation = [
         title: 'Title',
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
-        platform: 'messenger',
         author: 'bot',
+        date: '14-07-20',
         button: [
           {
             id: '1',
@@ -80,16 +78,16 @@ const conversation = [
         title: 'Title',
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
-        platform: 'messenger',
-        author: 'bot'
+        author: 'bot',
+        date: '14-07-20',
       },
       {
         id: '3',
         title: 'Title',
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
-        platform: 'messenger',
         author: 'bot',
+        date: '14-07-20',
         button: [
           {
             id: '1',
@@ -102,8 +100,8 @@ const conversation = [
         title: 'Title',
         subtitle: 'Subtitle',
         imgSrc: require('../../images/decepticons.jpg'),
-        platform: 'messenger',
-        author: 'bot'
+        author: 'bot',
+        date: '14-07-20',
       },
     ]
   },
