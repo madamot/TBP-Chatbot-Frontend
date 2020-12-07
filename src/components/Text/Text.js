@@ -79,14 +79,18 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
-export default function Text({ data: { title, platform, author, date, user, button }}) {
+export default function Text({ data: { title, platform, author, date, user, button, mode }}) {
   return (
       <Message author={author} platform={platform}>
         <MainMessage button={button} platform={platform} author={author}>
           <Meta platform={platform}>
             {author} {date}
           </Meta>
-          {title}
+          {
+            (mode == 'edit') ?
+              <p>Edit mode</p>
+            : <p>{title}</p>
+          }
         </MainMessage>
         {
           (button) ?
