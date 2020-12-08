@@ -1,7 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import Button from '../Button/Button';
+import ButtonEdit from '../Button/ButtonEdit';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimesCircle, faSmile } from '@fortawesome/free-solid-svg-icons'
 
 // import "../../index.css"
 
@@ -79,6 +82,21 @@ const Meta = styled.div`
   font-size: .8rem;
 `;
 
+const MessageText = styled.textarea`
+  border: none;
+  background-color: transparent;
+  padding: 12px 30px 12px 12px;
+  resize: none;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+`;
+
 export default function Text({ data: { title, platform, author, date, user, button }}) {
   return (
       <Message author={author} platform={platform}>
@@ -86,11 +104,23 @@ export default function Text({ data: { title, platform, author, date, user, butt
           <Meta platform={platform}>
             {author} {date}
           </Meta>
-          cog face {title}
+          <div style={{
+            display: 'flex',
+          }}>
+            <MessageText placeholder={title}>{title}</MessageText>
+            <div>
+              <FontAwesomeIcon icon={faTimesCircle} size='lg' value="Submit" style={{
+                padding: '2px'
+              }} />
+              <FontAwesomeIcon icon={faSmile} size='lg' value="Submit" style={{
+                padding: '2px'
+              }}/>
+            </div>
+          </div>
         </MainMessage>
         {
           (button) ?
-            <Button key={button.id} platform={platform} buttons={button} />
+            <ButtonEdit key={button.id} platform={platform} buttons={button} />
           : null
         }
       </Message>
