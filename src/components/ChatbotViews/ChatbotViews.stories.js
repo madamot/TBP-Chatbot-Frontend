@@ -106,8 +106,14 @@ export default {
 };
 
 
-export const Chatbots = () => (
+export const Preview_Chatbots = () => (
   <>
-    <ChatbotViews conversation={conversation} />
+    <ChatbotViews conversation={conversation} mode='preview' />
+  </>
+);
+
+export const Edit_Chatbots = () => (
+  <>
+    <ChatbotViews conversation={conversation} mode='edit' />
   </>
 );

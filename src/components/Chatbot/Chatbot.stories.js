@@ -109,14 +109,26 @@ const conversation = [
 ];
 
 
-export const Messenger_Chatbot = () => (
+export const Messenger_Preview_Chatbot = () => (
   <>
     <Chatbot conversation={conversation} platform='messenger' />
   </>
 );
 
-export const Teams_Chatbot = () => (
+export const Teams_Preview_Chatbot = () => (
   <>
     <Chatbot conversation={conversation} platform='teams' />
+  </>
+);
+
+export const Messenger_Edit_Chatbot = () => (
+  <>
+    <Chatbot conversation={conversation} platform='messenger' mode='edit' />
+  </>
+);
+
+export const Teams_Edit_Chatbot = () => (
+  <>
+    <Chatbot conversation={conversation} platform='teams' mode='edit' />
   </>
 );
