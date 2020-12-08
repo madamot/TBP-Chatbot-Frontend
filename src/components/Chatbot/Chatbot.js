@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
 import Text from '../Text/Text';
+import TextEdit from '../Text/TextEdit';
 import Image from '../Image/Image';
 import Carousel from '../Carousel/Carousel';
 import Video from '../Video/Video';
@@ -29,14 +30,23 @@ const getPreviewMessage = (msgData, platform) => ({
   // error: <Error />,
 });
 
+const getEditMessage = (msgData, platform) => ({
+  text: <TextEdit data={{...msgData, platform: platform}} />,
+  image: <Image message={{...msgData, platform: platform}} />,
+  carousel: <Carousel carousel={msgData.carouselData} platform={platform} />,
+  sound: <Sound data={{...msgData, platform: platform}} />,
+  video: <Video data={{...msgData, platform: platform}} />,
+  // error: <Error />,
+});
+
 export default function Chatbot({conversation, platform, addMessage, mode}) {
 
-    const renderSwitch = (mode, msgData) => {
+    const chatbotModeSwitch = (mode, msgData) => {
       switch(mode) {
         case 'preview':
           return getPreviewMessage(msgData, platform)[msgData.type];
         case 'edit':
-          return 'bar';
+          return getEditMessage(msgData, platform)[msgData.type];
         default:
           return 'foo';
       }
@@ -48,7 +58,7 @@ export default function Chatbot({conversation, platform, addMessage, mode}) {
         border: "1px solid #0084ff"
       }}>
         <ChatContainer platform={platform}>
-          {conversation.map(msgData => renderSwitch(mode, msgData))}
+          {conversation.map(msgData => chatbotModeSwitch(mode, msgData))}
         </ChatContainer>
         <UserInput platform={platform} addMessage={addMessage} />
       </div>
