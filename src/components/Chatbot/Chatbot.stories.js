@@ -10,6 +10,20 @@ export default {
   excludeStories: /.*Data$/,
 };
 
+export const QuickRepliesData = [
+  {
+    id: '1',
+    title: 'Reply 1',
+  },
+  {
+    id: '2',
+    title: 'Reply 2',
+  },
+  {
+    id: '3',
+    title: 'Reply 3',
+  },
+]
 
 const conversation = [
   {
@@ -105,6 +119,24 @@ const conversation = [
     author: 'bot',
     platform: 'messenger',
     date: '14-07-20',
+  },
+  {
+    id: '1',
+    type: 'quickreply',
+    quickreplyData: [
+      {
+      id: '1',
+      title: 'Reply 1',
+      },
+      {
+        id: '2',
+        title: 'Reply 2',
+      },
+      {
+        id: '3',
+        title: 'Reply 3',
+      },
+    ]
   }
 ];
 

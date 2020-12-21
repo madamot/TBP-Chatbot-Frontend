@@ -177,25 +177,25 @@ export const carouselTeamsData = [
 ];
 
 export const Messenger_Carousel_Single = () => (
-  <Carousel carousel={singleCarouselData} />
+  <Carousel data={singleCarouselData} />
 );
 
 export const Messenger_Carousel_Single_With_Button = () => (
-  <Carousel carousel={singleCarouselWithButtonData} button={Messenger_Button} platform='messenger' />
+  <Carousel data={singleCarouselWithButtonData} button={Messenger_Button} />
 );
 
 export const Messenger_Carousel = () => (
-  <Carousel carousel={carouselData} platform='messenger' />
+  <Carousel data={carouselData} />
 );
 
 export const Teams_Carousel_Single = () => (
-  <Carousel carousel={singleCarouselTeamsData} platform='teams' />
+  <Carousel data={singleCarouselTeamsData} platform='teams' />
 );
 
 export const Teams_Carousel_Single_With_Button = () => (
-  <Carousel carousel={singleCarouselWithButtonTeamsData} button={Teams_Button} platform='teams' />
+  <Carousel data={singleCarouselWithButtonTeamsData} button={Teams_Button} platform='teams' />
 );
 
 export const Teams_Carousel = () => (
-  <Carousel carousel={carouselTeamsData} platform='teams' />
+  <Carousel data={carouselTeamsData} platform='teams' />
 );

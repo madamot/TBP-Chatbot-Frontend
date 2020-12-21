@@ -7,17 +7,11 @@ import Button from '../Button/Button';
 
 const Message = styled.div`
   ${'' /* display: flex; */}
-  clear: both;
   position: relative;
-  margin: 1px 0;
+  clear: both;
+  margin-bottom: 5px;
   font-family: Helvetica, Arial, sans-serif;
   float: ${({ author }) => author === 'user' ? "right" : "left"};
-  ${({ platform }) =>
-    platform === 'teams' &&
-    css`
-      background-color: #fff;
-      padding: .8rem 1.6rem .8rem 1.6rem;
-    `}
   ${({ author, platform }) =>
     author === 'user' && platform === 'teams' &&
     css`
@@ -28,19 +22,21 @@ const Message = styled.div`
 
 const MainMessage = styled.div`
   padding: 6px 12px 7px;
+  display: inline-block;
   font-size: 14px;
   max-width: 95%;
   margin: 1px 0;
   border-radius: 20px;
   background: #eee;
+  float: left;
   border-bottom-left-radius: ${({ button }) => button ? "5px" : null};
   border-bottom-right-radius: ${({ button }) => button ? "5px" : null};
 
   ${({ platform }) =>
     platform === 'teams' &&
     css`
+      padding: .8rem 1.6rem .8rem 1.6rem;
       border-radius: 3px;
-      padding: 0;
       overflow: hidden;
       position: relative;
       color: #252423;
