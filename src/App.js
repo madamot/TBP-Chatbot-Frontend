@@ -12,17 +12,39 @@ function App() {
 
  // const id = user
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        `http://localhost:5000/api/chat/${user}`,
-      );
 
-      setConvo(result.data);
-    };
+   useEffect(() => {
+   let isMounted = true;
+   const fetchData = async () => {
+     await axios(
+       `http://localhost:5000/api/chat/${user}`,
+     )
+     .then(result => {
+     if (isMounted) setConvo(result.data);
+   })
+   .catch(error => {
+     setConvo([
+       {
+         id: '1',
+         type: 'text',
+         title: 'Something went wrong!',
+         platform: 'messenger',
+         author: 'bot',
+         date: '14-07-20',
+         updatedAt: new Date(2018, 0, 1, 9, 0),
+       }
+     ]);
+   });
 
-    fetchData();
+
+
+
+   };
+
+   fetchData();
+   return () => { isMounted = false };
   }, [user]);
+
 
   const send = (text, newConvo) => {
     axios.post(`http://localhost:5000/api/chat/${user}`, {
@@ -74,9 +96,6 @@ function App() {
       </label>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <ChatbotViews addMessage={addMessage} conversation={convo} />
-        {convo.map(msg => (
-          console.log(msg)
-        ))}
       </div>
     </div>
   );

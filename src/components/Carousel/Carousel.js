@@ -9,6 +9,7 @@ const Container = styled.div`
   flex-direction: row;
   overflow: auto;
   white-space: nowrap;
+  width: 25em;
 `;
 
 const TeamsContainer = styled.div`

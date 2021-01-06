@@ -32,13 +32,16 @@ const getMessage = (msgData, platform) => ({
 export default function Chatbot({conversation, platform, addMessage}) {
 
     return (
-      <div style={{
-        width: "25em",
-        border: "1px solid #0084ff"
-      }}>
+
+      <div
+        data-testid={platform}
+        style={{
+          width: "25em",
+          border: "1px solid #0084ff"
+        }}>
         <ChatContainer platform={platform}>
           {conversation.map(msgData => (
-            <div>
+            <div key={msgData.id + msgData.title}>
               {getMessage(msgData, platform)[msgData.type]}
             </div>
           ))}
